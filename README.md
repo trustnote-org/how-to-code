@@ -16,6 +16,15 @@ https://github.com/trustnotedocs
 
 TrustNote 2.x的开发工具包位于https://github.com/trustnote/how-to-code/tree/master/devkit 
 
-我们会尽快推出不同的语言版本SDK。
+我们会尽快推出不同的语言版本SDK（目前还没有提供）。
+
+各语言版本的SDK发布顺序为：
+
+1）python
+2）nodejs/javascript
+3）golang
+4）crystal
+
+其余的语言SDK，我们将做成任务包的形式，欢迎开源社区的开发者们积极参与。
 
 ^_^ 
