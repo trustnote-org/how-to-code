@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开发者社区</title>
+</head>
+<body>
+        {% if "username" in session %}
+            <a href="/member/{{ session["username"] }}">{{ session["username"] }}</a>
+            <a href="/new">创作新主题</a>
+            <a href="/logout">logout</a>
+        {% else %}
+            <a href="/signin">signin</a>
+            <a href="/signup">signup</a>
+        {% endif %}
+
+        {% for post in posts %}
+            <p><a href='/t/{{post["id"]}}'>{{post["title"]}}</a></p>
+        {% endfor %}
+    
+</body>
+</html>

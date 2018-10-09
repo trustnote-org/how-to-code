@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>signup</title>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/sha.js"></script>
+    <script type="text/javascript" src="/static/js/snake.js"></script>
+    <link rel="stylesheet" href="/static/css/signup.css">
+  </head>
+  <body>
+      <div id="wrapper">  
+          <div id="cell">
+              <div class="content">
+                  <div class="login_pan">
+                      <div title="return Home" class="close_pan"><a href="/"><img src="/static/images/close.png" alt=""></a></div>
+                      <div id="error_msg" class="form-group">
+                        <!-- That was simple. Your Account has been created -->
+                      </div>
+                      <div class="form-group">
+                        <input type="text" id="username" class="form-control" name="username" placeholder="access" value="">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" id="passwd" class="form-control" name="passwd" placeholder="passwd" value="">
+                      </div>
+                
+                      <input id="register_button" type="button" class="btn btn-primary" name="" value="Create an Account">
+                      <a href="/signin" type="button" class="btn btn-default">signin</a>
+                    </div>
+              </div>
+          </div>
+      </div>
+      <style>
+      
+</style>
+    <script type="text/javascript">
+      function hash_passwd(passwd){
+        var shaObj = new jsSHA("SHA-224", "TEXT");
+        shaObj.update(passwd);
+        return shaObj.getHash("HEX");
+      }
+      $("#register_button").click(function(){
+        username = $("#username").val();
+        passwd = $("#passwd").val();
+        if (username.length < 2){
+          $("#username").shake(5, 10, 400);
+          return false;
+        }
+        
+        passwd = $("#passwd").val();
+        if (passwd.length < 2){
+          $("#passwd").shake(5, 10, 400);
+          return false;
+        }
+        var passwd = hash_passwd(passwd);
+        $.post("/signup", {username:username,passwd:passwd} ,function( data ) {
+          console.log(data)
+          if(data=="cantreg"){
+            $("#error_msg").text("change anther username and try");
+            $("#username").shake(5, 10, 400);
+          }
+          if(data=="success"){
+            console.log("ok");
+            alert("create access ok")
+            window.location.href="/signin";
+          }
+        });
+      });
+      </script>
+  </body>
+</html>
