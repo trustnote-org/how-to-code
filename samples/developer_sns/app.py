@@ -12,22 +12,27 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 @app.before_request
 def checksession():
-    if "admin" in request.path:
-        if "role" in session:
-            #验证是否是admin
-            if session["role"]=="admin":
-                pass
-            else:
-                return redirect(url_for("home"))
-        else:
-            return redirect(url_for("login"))
-    # if "user" in request.path or "wallet" in request.path:
-    if "user" in request.path:
-        #验证是否是user
-        if "username" in session:
-            pass
-        else:
-            return redirect(url_for("login"))
+    if "username" in session or "signin" in request.path or "signup" in request.path:
+        pass
+    else:
+
+        return redirect(url_for("login"))
+    # if "admin" in request.path:
+    #     if "role" in session:
+    #         #验证是否是admin
+    #         if session["role"]=="admin":
+    #             pass
+    #         else:
+    #             return redirect(url_for("home"))
+    #     else:
+    #         return redirect(url_for("login"))
+    # # if "user" in request.path or "wallet" in request.path:
+    # if "user" in request.path:
+    #     #验证是否是user
+    #     if "username" in session:
+    #         pass
+    #     else:
+    #         return redirect(url_for("login"))
 
 @app.route('/')
 def home():
@@ -93,10 +98,10 @@ def logout():
 # new
 @app.route('/new',methods=['GET','POST'])
 def new_post():
-    if "username" in session:
-        pass
-    else:
-        return redirect(url_for("login"))
+    # if "username" in session:
+    #     pass
+    # else:
+    #     return redirect(url_for("login"))
     if request.method == 'POST':
         username = session["username"]
         title = request.form.get('title')
