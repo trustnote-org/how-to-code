@@ -2,6 +2,8 @@
 
 在H5页面中开发，使用jssdk构建基于TrustNote公链的支付类应用。
 
+开发者开发的H5页面，是在TrustNote通用钱包中使用，相当于微信的小程序。开发者围绕支付开发各种应用，实现付费后的增值服务。
+
 jssdk下载地址：
 
 https://raw.githubusercontent.com/trustnote/how-to-code/master/devkit/javascript/trustnote.js
