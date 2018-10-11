@@ -6,10 +6,11 @@
 #!/usr/bin/ruby
 
 require "./miningHelper.rb"
-
-
 helper = Helper.new
 helper.init
+
+# print info for mining 
+
 puts "Unit count:#{helper.get_unit_count}"
 puts "My address:#{helper.get_address}"
 puts "Round index:#{helper.get_round_index}"
