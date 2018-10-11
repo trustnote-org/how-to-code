@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>#{@title}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Mining Dashboard</h1>
+        <p class="lead">Address : <span id="address"></span></p>
+        <hr class="my-4">
+        <p>Round Index : <span id="round_index"></span></p>
+
+
+        <p>Unit : <span id="unit"></span></p>
+        <p>Pow : <span id="pow"></span></p>
+        <p>TrustMe : <span id="trustme"></span></p>
+        <p>Coinbase : <span id="coinbase"></span></p>
+
+        <p>TTT : <span id="ttt"></span> MN</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://github.com/trustnote/how-to-code/tree/master/samples/miningDashboard/ruby" target="_blank" role="button">GitHub</a>
+        </p>
+    </div>
+
+    <script>
+        function get_data() {
+            $.get("/api/round", function (x) {
+                $("#round_index").text(x);
+            });
+            $.get("/api/address", function (x) {
+                $("#address").text(x);
+            });
+            $.get("/api/count/unit", function (x) {
+                $("#unit").text(x);
+            });
+            $.get("/api/count/pow", function (x) {
+                $("#pow").text(x);
+            });
+            $.get("/api/count/trustme", function (x) {
+                $("#trustme").text(x);
+            });
+            $.get("/api/count/coinbase", function (x) {
+                $("#coinbase").text(x);
+            });
+            $.get("/api/count/ttt", function (x) {
+                $("#ttt").text(x);
+            });
+        }
+        get_data();
+        setInterval(get_data, 3000);
+    </script>
+</body>
+
+</html>
