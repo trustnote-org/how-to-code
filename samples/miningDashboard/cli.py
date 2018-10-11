@@ -12,4 +12,8 @@ print ("coinbase count :{0}".format(helper.get_coinbase_count()))
 
 round_index = helper.get_round_index()
 print ("round index:{0}".format(round_index))
+
+unit_count = helper.get_unit_count()
+print ("unit count:{0}".format(unit_count))
+
 print ("am in trustme?:{0}".format(helper.is_round_in(round_index-1)))

@@ -113,3 +113,12 @@ def get_trustme_count():
 #coinbase count
 def get_coinbase_count():
     return get_count(3)
+#unit count
+def get_unit_count():
+    sql = "select count(*) from units"
+    values = get_values(sql)
+    if (len(values)>0):
+        count = values[0][0]
+        return int(count)
+    else :
+        return 0

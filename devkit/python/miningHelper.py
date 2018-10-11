@@ -76,7 +76,7 @@ def is_round_in(round_index):
     address = get_address()
     sql = "select address from units join unit_authors using(unit) where round_index={0} and pow_type=1 and sequence='good';".format(round_index)
     values = get_values(sql)
-    print ("!!! {0}".format(values))
+    print ("{0}".format(values))
     if (len(values)>0):
         for item in values:
             if (address == item[0]):
@@ -112,4 +112,13 @@ def get_trustme_count():
     return get_count(2)
 #coinbase count
 def get_coinbase_count():
-return get_count(3)
+    return get_count(3)
+#unit count
+def get_unit_count():
+    sql = "select count(*) from units"
+    values = get_values(sql)
+    if (len(values)>0):
+        count = values[0][0]
+        return int(count)
+    else :
+        return 0
