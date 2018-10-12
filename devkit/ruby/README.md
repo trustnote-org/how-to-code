@@ -1,4 +1,4 @@
-## miningHelper SDK for ruby
+## TrustNote 2.0 Mining Helper SDK for Ruby
 
 ### how to use
 
@@ -6,10 +6,11 @@
 #!/usr/bin/ruby
 
 require "./miningHelper.rb"
-
-
 helper = Helper.new
 helper.init
+
+# print info for mining 
+
 puts "Unit count:#{helper.get_unit_count}"
 puts "My address:#{helper.get_address}"
 puts "Round index:#{helper.get_round_index}"
@@ -19,5 +20,5 @@ puts "CoinBase count:#{helper.get_coinbase_count}"
 puts "TTT:#{helper.get_ttt/1000000} MN"
 ```
 
-### sample
+### sample code
 https://github.com/trustnote/how-to-code/tree/master/samples/miningDashboard/ruby
