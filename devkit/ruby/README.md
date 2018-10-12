@@ -1,4 +1,4 @@
-## miningHelper SDK for ruby
+## TrustNote 2.0 Mining Helper SDK for ruby
 
 ### how to use
 
@@ -20,5 +20,5 @@ puts "CoinBase count:#{helper.get_coinbase_count}"
 puts "TTT:#{helper.get_ttt/1000000} MN"
 ```
 
-### sample
+### sample code
 https://github.com/trustnote/how-to-code/tree/master/samples/miningDashboard/ruby
