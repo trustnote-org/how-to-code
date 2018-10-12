@@ -76,7 +76,7 @@ https://github.com/trustnote/how-to-code/tree/master/samples/paid_reading
 
 # 这里是重点 需要完善我们的通用钱包与SDK
 
-### 开发者大赛，jssdk功能需求
+### jssdk功能需求
 
 理念是，会用jquery就能开发TrustNote区块链应用。因此能托管的服务我们尽力托管，尽量不要让开发者自己部署后端代码。
 
@@ -107,3 +107,8 @@ https://github.com/trustnote/how-to-code/tree/master/samples/paid_reading
    判断用户钱包，是否向目标钱包地址支付过。如果查询到交易过，则返回所有和该目标地址相关的交易时间。
 
 5. 其他需求，随时探讨
+
+### 钱包需求
+
+1. 支持ios、android
+2. 提供一个设置入口，设置开发者的H5应用地址（可以不保存在服务器上）
