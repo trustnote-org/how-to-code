@@ -14,30 +14,40 @@ https://github.com/trustnotedocs
 
 1.0时代的sdk在2.0的TrustNote中无法使用，因此 headlessRPC、pythonSDK、RustSDK等工具我们不再维护和更新。
 
-TrustNote 2.x的开发工具包位于https://github.com/trustnote/how-to-code/tree/master/devkit 
+TrustNote 2.x的开发工具包位于 https://github.com/trustnote/how-to-code/tree/master/devkit 
 
 ### 矿助手SDK
 
 1）python
 
 sdk
+
 https://github.com/trustnote/how-to-code/tree/master/devkit/python
 
 samples
+
 https://github.com/trustnote/how-to-code/tree/master/samples/miningDashboard/python
 
 2）ruby
+
 sdk
+
 https://github.com/trustnote/how-to-code/tree/master/devkit/ruby
 
 samples
+
 https://github.com/trustnote/how-to-code/tree/master/samples/miningDashboard/ruby
 
 2）nodejs/javascript
+
 (未完成)
+
 3）golang
+
 (未完成)
+
 4）crystal
+
 (未完成)
 
 其余的语言SDK，我们将做成任务包的形式，欢迎开源社区的开发者们积极参与。
