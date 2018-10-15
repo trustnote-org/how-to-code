@@ -31,13 +31,13 @@ TrustNote 2.x的开发工具包位于https://github.com/trustnote/how-to-code/tr
 
 ### 开发者大赛
 
-TrustNote2.x即将到来。我们将在近期举办开发者大赛。
+第一届开发者大赛主题：支付
 
-大赛主题：围绕挖矿，开发第三方增强工具提高用户体验，或开发第三方平台为用户提供增值服务。
+详细情况请访问 https://github.com/trustnote/how-to-code/blob/master/activitys/%E9%A6%96%E5%B1%8A%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E8%B5%9B.md
 
-示例1：siri挖矿助手
-通过语音，让siri启动和停止PC端的挖矿
+第二届开发者大赛主题：挖矿
 
-示例2：挖矿通知
-因为人不能一直盯着屏幕看自己挖到多少，因此，做一个挖矿通知，当挖到矿的时候，播放语言提示，或发短信告知。
+详细情况请访问 https://github.com/trustnote/how-to-code/blob/master/activitys/%E7%AC%AC%E4%BA%8C%E5%B1%8A%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E8%B5%9B.md
+
+
 
