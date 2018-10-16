@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title><%= @title %></title>
+    <link rel="stylesheet" href="/css/csshake.min.css" />
+    <link href="/css/style.css?v=1.10" rel="stylesheet">
+    <link href="/css/mobile.css?v=1.10" rel="stylesheet">
+</head>
+<body>
+<div class="head">
+    <div class="wapper">
+        <div class="nav">
+            <a href="/" class="logo shake-slow"></a>   
+            <div class="toggle-menu"></div>
+            <div class="menu">
+
+                    <a class="shake-slow" href="/user"><%=@username%></a>
+                    <a class="shake-slow" href="/login">login</a>
+
+                    <a class="shake-slow" target="_blank" href="http://dev.trustnote.org:3000">explorer</a>
+                    <a class="nav_menu shake-slow" url="#communitys">communitys</a>
+                    <a class="nav_menu shake-slow" url="#videos">videos</a>
+                    <a class="nav_menu shake-slow" url="#tools">tools</a>
+                    <a class="nav_menu shake-slow" url="#documents">documents</a>
+                    <a class="nav_menu shake-slow" url="#samples">samples</a>
+                    <a class="nav_menu shake-slow" url="#tasks">tasks</a>
+                    
+                </div>
+            
+        </div>
+        <div id="banner" class="banner">
+            <div class="banner_title">
+                <%=@banner_title%>
+            </div>
+            <div class="banner_text">
+                <%=@banner_text%>
+            </div>
+            <div class="banner_image">
+                <img src="<%=@banner_image%>"/>
+            </div>
+        </div>
+    </div>
+    <div class="slide-menu">
+            <div class="logo-menu-active"></div>
+            <div class="toggle-menu-close"></div>
+            <div class="clearfix"></div>
+            <a class="nav_menu slide-menu-link" url="#tasks">tasks</a>
+            <a class="nav_menu slide-menu-link" url="#samples">samples</a>
+            <a class="nav_menu slide-menu-link" url="#documents">documents</a>
+            <a class="nav_menu slide-menu-link" url="#tools">tools</a>
+            <a class="nav_menu slide-menu-link" url="#videos">videos</a>
+            <a class="nav_menu slide-menu-link" url="#communitys">communitys</a>
+            <a class="slide-menu-link" target="_blank" href="http://dev.trustnote.org:3000">explorer</a>
+            
+            <a href="/user/" class="slide-menu-link"><%=@username%></a>
+            <a href="/login" class="slide-menu-link">login</a>
+
+            
+    </div>
+</div>
+<div class="wapper">
+    <!--tasks-->
+    <div id="tasks" class="tasks">
+        <div class="tasks_title">tasks</div>
+        <div class="task">
+            {% for task in tasks %}
+            <div class="task-item">
+                <div class="task_icon">
+                    <img class="shake-slow" src='{{ task["icon"] }}' alt="">
+                </div>
+                <div class="task_title">
+                    {{ task["title"] }}
+                </div>
+                <div class="task_text">
+                    {{ task["text"] }}
+                </div>
+                <div class="claim">
+                    {% if task["status"]=="finish" %}
+                    <a style="color:#b7b7b7;cursor: none;">finish</a>
+                    {% else %}
+                    <a class="shake-slow" href='{{task["url"]}}' target="_blank">claim</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="more_tasks_button">
+            <a href="https://github.com/TrustNoteTasks" target="_blank" class="more_tasks">more tasks</a>
+        </div>
+    </div>
+    <!--samples-->
+    <div id="samples" class="samples">
+        <div class="samples_title">samples</div>
+        <div class="sample">
+            {% for sample in samples %}
+            <div class="sample-item">
+                <div class="sample_icon">
+                    <img class="shake-slow" src="{{ sample['icon'] }}" alt="">
+                </div>
+                <div class="sample_title">
+                    {{ sample["title"] }}
+                </div>
+                <div class="sample_text">
+                    {{ sample["text"] }}
+                </div>
+                <div class="read">
+                    <a href="{{sample['url']}}" class="shake-slow" target="_blank">source</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="more_samples_button">
+            <a href="https://github.com/trustnotesamples" target="_blank" class="more_samples">more samples</a>
+        </div>
+    </div>
+    <!--documents-->
+    <div id="documents" class="documents">
+        <div class="documents_title">documents</div>
+        <div class="doc-img">
+            <img src="{{document.img}}" alt="">
+        </div>
+        <div class="doc-content">
+            <div class="document_title">
+                {{document.title}}
+            </div>
+            <div class="document_text">
+                {{document.text}}
+            </div>
+            <div class="documents_url">
+                <a class="documents_url_link shake-slow" target="_blank" href="{{document.url}}">more documents</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!--SDK & Tools-->
+<div id="tools" class="tools">
+    <div class="wapper">
+        <div class="tools_title">tools</div>
+        <div class="tools_contents">
+            {% for tool in tools %}
+            <div class="tools-item">
+                <div class="tool_header">
+                    <div class="tool_icon">
+                        <img class="shake-slow" src="{{ tool['icon'] }}" alt="">
+                    </div>
+                    <div class="tool_title">
+                        {{ tool["title"] }}
+                    </div>
+                </div>
+                <div class="tool_text">
+                    {{ tool["text"] }}
+                </div>
+                <div class="tool_downlowd">
+                    <a href="{{tool['url']}}" class="shake-slow" target="_blank">download</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="wapper">
+    <!--videos-->
+    <div id="videos" class="videos">
+        <div class="videos_title">videos</div>
+        <div class="video-contents">
+            {% for video in videos %}
+            <div class="video-item shake-slow">
+                
+                <div class="bg-image">
+                    <img src="{{ video['icon'] }}" alt="">
+                    
+                </div>
+
+                <div class="mask"></div>
+
+                <a class="mask_text" href="{{video['url']}}" class="video-link" target="_blank">
+                    <div class="play_button">
+                            <img src="/images/video_play.png" alt="">
+                    </div>
+                    <div class="video_title">{{ video["title"] }}</div>
+                </a>
+
+            </div>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="more_videos_button">
+            <a href="#" target="_blank" class="more_videos">more videos</a>
+        </div>
+    </div>
+    <!--communitys-->
+    <div id="communitys" class="communitys">
+        <div class="communitys_title">communitys</div>
+        <div class="community-content">
+            {% for community in communitys %}
+            <div class="community-item">
+                <a href="{{community['url']}}" target="_blank">
+                    <img src="{{ community['icon'] }}" title="{{ community['title'] }}">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div id="gotop" title="goto Top" class="opacity_0"></div>
+</div>
+<div class="clearfix"></div>
+<div class="footer">© 2018 developers <a class="improve shake-slow" href="https://github.com/TrustNoteSamples/developers_home" target="_blank">Improve this page</a></div>
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/js/index.js?v=1.01"></script>
+<script>
+    $(".nav_menu").click(function(){
+        
+        id_str = $(this).attr("url");
+
+        if($(id_str).length==1){
+
+            $('html, body').animate({
+                scrollTop: $(id_str).offset().top
+            }, 500)
+
+            $("#gotop").attr("class","opacity_1");
+        }
+
+    });
+
+    $("#gotop").click(function(){
+        $("#gotop").attr("class","opacity_0");
+        $('html, body').animate({
+                scrollTop: 0
+        }, 500)
+    });
+    $("body").scroll(function(){
+
+    });
+</script>
+</body>
+</html>

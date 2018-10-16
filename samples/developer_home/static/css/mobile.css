@@ -1,0 +1,364 @@
+@media screen and (max-width: 1280px) {
+    body{
+        zoom: 0.7;
+    }
+}
+@media screen and (max-width: 750px) {
+    body{
+        zoom: 1;
+    }
+    .wapper{
+        width: 100%;
+        padding: 0 2rem;
+        box-sizing: border-box;
+    }
+    html{
+        font-size:14px; 
+        overflow-x: hidden;
+    }
+
+    .nav{
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .logo{
+        width: 150px;
+        height: 70px;
+        background: url(/static/images/logo.png) center center no-repeat;
+        background-size: 150px;
+        margin-left: -10px;
+    }
+
+    .toggle-menu{
+        display: block;
+        height: 70px;
+        width: 100px;
+        background: url(/static/images/point.png) center right no-repeat;
+        background-size: 20px;
+        float: right;
+    }
+
+    .menu{
+       display: none;
+    }
+
+    .slide-menu{
+        width: 100%;
+        height: 496px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        padding: 0 2rem;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .logo-menu-active{
+        width: 150px;
+        height: 70px;
+        background: url(/static/images/logo2.png) center center no-repeat;
+        background-size: 150px;
+        margin-left: -10px;
+        float: left;
+    }
+
+    .toggle-menu-close{
+        height: 70px;
+        width: 100px;
+        background: url(/static/images/close-menu.png) center right no-repeat;
+        background-size: 20px;
+        float: right;
+    }
+
+    .slide-menu a{
+        height: 50px;
+        line-height: 50px;
+        color: #333333;
+        display: block;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .slide-menu a:active{
+        background-color: #FFFFFF;
+    }
+    .banner_title {
+        width: 100%;
+        height: auto;
+        font-size: 30px;
+        padding-top: 24px;
+        color: #fff;
+        line-height: 40px;
+    }
+    .banner_text {
+        color: #fff;
+        width: 100%;
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .banner_image {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-top: 15px;
+    }
+    .tasks_title, .samples_title {
+        font-size: 24px;
+        color: #111111;
+        line-height: 24px;
+        margin-top: 30px;
+    }
+    .task, .sample {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .task-item {
+        width: 100%;
+        height: 25rem;
+        position: relative;
+        border: 1px solid #D4E0F1;
+        margin-top: 20px;
+    }
+    .task_title, .sample_title {
+        color: #333333;
+        margin-top: 28px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .task_text, .sample_text {
+        color: #666666;
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .claim, .read {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 35px;
+    }
+    .claim a, .read a {
+        color: #3759CB;
+        font-size: 18px;
+        line-height: 18px;
+        text-decoration: none;
+    }
+    .more_tasks_button, .more_samples_button, .more_videos_button{
+        width: 100%;
+        margin-top: 17px;
+        text-align: right;
+    }
+    .more_tasks, .more_samples, .more_videos{
+        font-size: 14px;
+        color: #666666;
+        text-align: right;
+        line-height: 14px;
+        text-decoration: none;
+        background-size: 4px;
+        padding-right: 18px;
+    }
+
+
+
+    .sample-item {
+        width: 100%;
+        height: 27rem;
+        margin-top: 25px;
+    }
+    .documents_title {
+        margin-top: 60px;
+        font-size: 24px;
+        color: #111111;
+        line-height: 26px;
+        margin-bottom: 44px;
+    }
+    .doc-img {
+        width: 100%;
+        height: auto;
+        float: none;
+        background-color: #fff;
+    }
+    .doc-img >img{
+        width: 100%;
+    }
+    .doc-content {
+        width: 100%;
+        float: none;
+    }
+    .document_title {
+        font-size: 20px;
+        color: #111111;
+        line-height: 26px;
+        margin-top: 45px;
+    }
+    .document_text {
+        font-size: 16px;
+        color: #111111;
+        line-height: 26px;
+        margin-top: 20px;
+    }
+    .documents_url {
+        width: 238px;
+        height: 40px;
+        margin-top: 40px;
+        text-align: center;
+        background: linear-gradient(45deg, #3459C9 0%, #5957DC 100%);
+        border-radius: 20px;
+    }
+    .documents_url_link {
+        font-size: 16px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+    }
+    .tools {
+        width: 100%;
+        margin-top: 60px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: #F8F9FB;
+    }
+    .tools_title {
+        font-size: 24px;
+        color: #333333;
+        line-height: 26px;
+    }
+    .tools_contents {
+        margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .tools-item {
+        width: 100%;
+        margin-top: 160px;
+        margin-left: 0;
+    }
+    .tool_header {
+        width: 15rem;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .tool_icon {
+        width: 40px;
+        height: 40px;
+        float: left;
+    }
+    .tool_title {
+        float: left;
+        color: #111111;
+        font-size: 24px;
+        line-height: 40px;
+        padding-left: 10px;
+    }
+    .tool_text {
+        font-size: 16px;
+        color: #666666;
+        line-height: 30px;
+        margin-top: 32px;
+        text-align: center;
+        height: 70px;
+    }
+    .tool_downlowd {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .tool_downlowd a {
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: none;
+        color: #3759CB;
+        height: 20px;
+    }
+    .videos_title {
+        font-size: 24px;
+        color: #333333;
+        line-height: 26px;
+        margin-top: 40px;
+    }
+    .video-contents {
+        height: auto;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .video-item {
+        width: 100%;
+        margin-top: 20px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        box-shadow: 0 2px 14px 0 rgba(55,89,203,0.20);
+    }
+    .video-item .bg-image img{
+        width: 100%;
+    }
+    /* .play_button img {
+        width: 45px;
+        height: 45px;
+        margin-top: 50px;
+        margin-left: 41px;
+    }
+    .video_title {
+        font-size: 20px;
+        color: #FFFFFF;
+        line-height: 30px;
+        margin-top: 15px;
+        margin-left: 41px;
+    }
+    .video-link {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+    } */
+
+
+
+    .communitys {
+        margin-top: 40px;
+    }
+    .communitys_title {
+        font-size: 24px;
+        color: #333333;
+        line-height: 26px;
+    }
+    .community-content {
+        margin-top: 41px;
+        text-align: center;
+    }
+    .community-item {
+        border-radius: 65px;
+        display: block;
+        background: rgba(255,255,255,0.00);
+        box-shadow: 0 2px 13px 0 rgba(55,89,203,0.20);
+        width: 40px;
+        height: 40px;
+        margin: 20px auto;
+    }
+    .footer {
+        height: 100px;
+        color: #666666;
+        font-size: 14px;
+        margin-top: 50px;
+        background: #F8F9FB;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .more_videos{
+        font-size: 16px;
+        color: #666666;
+        text-align: right;
+        line-height: 18px;
+        text-decoration: none;
+        background-size: 4px;
+        padding-right: 18px;
+    }
+}
