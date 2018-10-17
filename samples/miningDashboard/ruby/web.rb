@@ -46,4 +46,4 @@ class Api_Count < Ramaze::Controller
     end
 end
 
-Ramaze.start
+Ramaze.start :port => 80
