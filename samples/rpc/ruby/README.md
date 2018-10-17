@@ -29,6 +29,14 @@ ruby test.rb
 
 ```
 sudo nmap localhost -sS -p 1-65535
+
 ```
 
+注意：以上方法不好使，因为RPC非标准RPC。
+
+可用的方法如下：
+
+```
+ruby test.rb
+```
 
