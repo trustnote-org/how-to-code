@@ -86,8 +86,8 @@ class RPC
         send_data(@@url,payload)
     end
 
-    def unhandleJoints
-        payload = Hash["method" => "unhandleJoints", "params" => {},"jsonrpc" => "2.0","id" => 1]
+    def unhandledJoints
+        payload = Hash["method" => "unhandledJoints", "params" => {},"jsonrpc" => "2.0","id" => 1]
         send_data(@@url,payload)
     end
 end
