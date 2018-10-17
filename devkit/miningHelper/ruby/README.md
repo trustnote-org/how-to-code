@@ -1,4 +1,4 @@
-### TrustNote 2.0 Mining Helper SDK for Ruby
+# TrustNote 2.0 Mining Helper SDK for Ruby
 
 ### how to use
 ```

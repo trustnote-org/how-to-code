@@ -1,4 +1,4 @@
-# TrustNote 2.0 SDK for Ruby
+# TrustNote 2.0 RPC-SDK for Ruby
 
 ### TrustNote 2.0 RPC SDK for Ruby
 
