@@ -11,6 +11,7 @@ class RPC
         uri = URI(url)
         req = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')
         req.body = hash_data.to_json
+        # puts req.body
         res = Net::HTTP.start(uri.hostname, uri.port) do |http|
             http.request(req).body
         end

@@ -4,8 +4,8 @@ puts rpc.getinfo
 # puts rpc.getnewaddress
 puts rpc.getalladdress
 puts "checkaddress:#{rpc.checkaddress("O2ZH72Q4TJ4ECCN3MKMFZKR4XIBYIPJW")}"
-puts rpc.getbalance("O2ZH72Q4TJ4ECCN3MKMFZKR4XIBYIPJW")
-puts rpc.getmainbalance
+puts rpc.getbalance("XKPXK5NDUFYYCL46UKJCAMSGSCFAPMGZ")
+# puts rpc.getmainbalance
 
 
 puts "sendtoaddress:#{rpc.sendtoaddress("O2ZH72Q4TJ4ECCN3MKMFZKR4XIBYIPJW",1)}"

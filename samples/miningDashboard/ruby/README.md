@@ -3,7 +3,8 @@
 ### install
 
 ```
-sudo apt-get install libsqlite3-dev
+sudo apt install ruby ruby-dev
+sudo apt install libsqlite3-dev
 sudo gem install sqlite3
 sudo gem install ramaze
 sudo gem install json
