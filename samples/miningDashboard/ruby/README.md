@@ -1,4 +1,4 @@
-# TrustNote 2.0 Mining Helper SDK for Ruby
+# Sample : Mining Helper SDK for Ruby
 
 ### install
 

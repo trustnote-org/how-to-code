@@ -10,5 +10,6 @@ node start.js
 2. run rpc demo
 
 ```
-ruby test.rb
+pip install requests
+python test.py
 ```
