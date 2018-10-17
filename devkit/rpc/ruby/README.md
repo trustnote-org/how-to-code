@@ -51,3 +51,7 @@ ruby test.rb
 
 ### 注意
 > 目前 超级节点的RPC存在bug，请开发者不要调用RPC的getnewaddress接口，因为该接口会让超级节点新增一个地址，而超级节点在设计时定为单地址，因此新增的地址会导致超级节点崩溃无法启动，而且RPC没有删除地址的接口！
+
+### sample
+
+https://github.com/trustnote/how-to-code/tree/master/samples/rpc/ruby

@@ -26,3 +26,7 @@ print ("\nlisttransactions:\n{0}".format(rpc.listtransactions()))
 
 print ("\ngetRoundInfo:\n{0}".format(rpc.getRoundInfo()))
 ```
+
+### sample
+
+https://github.com/trustnote/how-to-code/tree/master/samples/rpc/python

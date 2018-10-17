@@ -20,4 +20,5 @@ puts "TTT:#{helper.get_ttt/1000000} MN"
 ```
 
 ### sample code
+
 https://github.com/trustnote/how-to-code/tree/master/samples/miningDashboard/ruby
