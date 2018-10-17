@@ -1,4 +1,7 @@
-require 'jimson'
-client = Jimson::Client.new("http://localhost:8999") # the URL for the JSON-RPC 2.0 server to connect to
-result = client.getnewaddress # call the 'sum' method on the RPC server and save the result '3'
-puts result
+require './rpc.rb'
+rpc = RPC.new("http://localhost:8888")
+puts rpc.getinfo
+# puts rpc.getnewaddress
+puts rpc.getalladdress
+# puts rpc.checkaddress("O2ZH72Q4TJ4ECCN3MKMFZKR4XIBYIPJW")
+puts rpc.getBalance("O2ZH72Q4TJ4ECCN3MKMFZKR4XIBYIPJW")
