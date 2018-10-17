@@ -29,7 +29,7 @@ ruby cli.rb
 ### run in web
 
 ```
-ruby web.rb
+ruby web.rb 7000
 ```
 
 http://localhost:7000/

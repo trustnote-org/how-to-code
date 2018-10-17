@@ -46,4 +46,4 @@ class Api_Count < Ramaze::Controller
     end
 end
 
-Ramaze.start :port => 80
+Ramaze.start :port => host = ARGV[0]
