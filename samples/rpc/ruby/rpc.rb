@@ -61,7 +61,7 @@ class RPC
     end
 
     def sendtoaddress(address,amount)
-        payload = Hash["method" => "sendtoaddress", "params" => {"address" => address,"amount" => amount},"jsonrpc" => "2.0","id" => 1]
+        payload = Hash["method" => "sendtoaddress", "params" => [address,amount],"jsonrpc" => "2.0","id" => 1]
         send_data(@@url,payload)
     end
 

@@ -11,12 +11,17 @@ print ("\ngetBalance:\n{0}".format(rpc.getbalance("XKPXK5NDUFYYCL46UKJCAMSGSCFAP
 print ("\ngetmainbalance:\n{0}".format(rpc.getmainbalance()))
 print ("\nlisttransactions:\n{0}".format(rpc.listtransactions()))
 
-# bug
-# print ("\nsendtoaddress:\n{0}".format(rpc.sendtoaddress("XKPXK5NDUFYYCL46UKJCAMSGSCFAPMGZ",10)))
+# ok
+print ("\nsendtoaddress:\n{0}".format(rpc.sendtoaddress("XKPXK5NDUFYYCL46UKJCAMSGSCFAPMGZ",10)))
 
 # bug
 #print ("\nminingStatus:\n{0}".format(rpc.miningStatus()))
 
 
+# ok
+#print ("\ngetRoundInfo:\n{0}".format(rpc.getRoundInfo()))
 
-print ("\ngetRoundInfo:\n{0}".format(rpc.getRoundInfo()))
+# bugs
+#print ("\nunitInfo:\n{0}".format(rpc.unitInfo()))
+#print ("\nbadJoints:\n{0}".format(rpc.badJoints()))
+#print ("\nunhandleJoints:\n{0}".format(rpc.unhandleJoints()))

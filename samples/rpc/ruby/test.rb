@@ -1,5 +1,5 @@
 require './rpc.rb'
-rpc = RPC.new("http://localhost:8888")
+rpc = RPC.new("http://localhost:6553")
 puts rpc.getinfo
 # puts rpc.getnewaddress
 puts rpc.getalladdress

@@ -3,7 +3,7 @@
 import requests
 import json
 
-url = "http://localhost:8888"
+url = "http://localhost:6553"
 headers = {'content-type': 'application/json'}
 
 def get_result(payload):
