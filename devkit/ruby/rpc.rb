@@ -46,12 +46,12 @@ class RPC
     # 以下函数因超级节点崩溃了没有进行测试，请开发者测试并提交bug
 
     def checkaddress(address)
-        payload = Hash["method" => "checkddress", "params" => {"address" => address},"jsonrpc" => "2.0","id" => 1]
+        payload = Hash["method" => "checkAddress", "params" => {"address" => address},"jsonrpc" => "2.0","id" => 1]
         send_data(@@url,payload)
     end
 
-    def getBalance(address)
-        payload = Hash["method" => "getBalance", "params" => {"address" => address},"jsonrpc" => "2.0","id" => 1]
+    def getbalance(address)
+        payload = Hash["method" => "getbalance", "params" => {"address" => address},"jsonrpc" => "2.0","id" => 1]
         send_data(@@url,payload)
     end
 
@@ -61,7 +61,7 @@ class RPC
     end
 
     def sendtoaddress(address,amount)
-        payload = Hash["method" => "getBalance", "params" => {"address" => address,"amount" => amount},"jsonrpc" => "2.0","id" => 1]
+        payload = Hash["method" => "sendtoaddress", "params" => {"address" => address,"amount" => amount},"jsonrpc" => "2.0","id" => 1]
         send_data(@@url,payload)
     end
 
