@@ -10,7 +10,7 @@ puts rpc.getbalance("MID53HBTZ35WCYZ4FB7LORHKH43XZVVH")
 # puts rpc.getmainbalance
 
 
-# puts "sendtoaddress:#{rpc.sendtoaddress("MID53HBTZ35WCYZ4FB7LORHKH43XZVVH",1000)}"
+puts "sendtoaddress:#{rpc.sendtoaddress("MID53HBTZ35WCYZ4FB7LORHKH43XZVVH",100000)}"
 # puts rpc.miningStatus
 #puts rpc.getRoundInfo
 
