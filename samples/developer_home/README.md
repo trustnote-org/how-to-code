@@ -52,3 +52,22 @@ ruby + sqlite3 + trustnote-pow-supernode + RPC-rubySDK
     └── index.erb        首页模板
 ```
 
+### 安装
+
+```
+sudo apt install ruby
+gem install sinatra
+```
+
+### 运行
+
+```
+./restart
+```
+
+### 访问
+
+```
+http://localhost:8080
+```
+
