@@ -57,8 +57,6 @@
             
             <a href="/user/" class="slide-menu-link"><%=@username%></a>
             <a href="/login" class="slide-menu-link">login</a>
-
-            
     </div>
 </div>
 <div class="wapper">
@@ -66,26 +64,26 @@
     <div id="tasks" class="tasks">
         <div class="tasks_title">tasks</div>
         <div class="task">
-            {% for task in tasks %}
+            <%for task in @tasks%>
             <div class="task-item">
                 <div class="task_icon">
-                    <img class="shake-slow" src='{{ task["icon"] }}' alt="">
+                    <img class="shake-slow" src='<%=task["icon"]%>' alt="">
                 </div>
                 <div class="task_title">
-                    {{ task["title"] }}
+                    <%=task["title"]%>
                 </div>
                 <div class="task_text">
-                    {{ task["text"] }}
+                    <%=task["text"]%>
                 </div>
                 <div class="claim">
-                    {% if task["status"]=="finish" %}
+                    <%if task["status"]=="finish"%>
                     <a style="color:#b7b7b7;cursor: none;">finish</a>
-                    {% else %}
-                    <a class="shake-slow" href='{{task["url"]}}' target="_blank">claim</a>
-                    {% endif %}
+                    <%else%>
+                    <a class="shake-slow" href='<%=task["url"]%>' target="_blank">claim</a>
+                    <%end%>
                 </div>
             </div>
-            {% endfor %}
+            <%end%>
         </div>
         <div class="more_tasks_button">
             <a href="https://github.com/TrustNoteTasks" target="_blank" class="more_tasks">more tasks</a>
@@ -95,22 +93,22 @@
     <div id="samples" class="samples">
         <div class="samples_title">samples</div>
         <div class="sample">
-            {% for sample in samples %}
+            <%for sample in @samples%>
             <div class="sample-item">
                 <div class="sample_icon">
-                    <img class="shake-slow" src="{{ sample['icon'] }}" alt="">
+                    <img class="shake-slow" src="<%=sample["icon"]%>" alt="">
                 </div>
                 <div class="sample_title">
-                    {{ sample["title"] }}
+                    <%=sample["title"]%>
                 </div>
                 <div class="sample_text">
-                    {{ sample["text"] }}
+                    <%=sample["text"]%>
                 </div>
                 <div class="read">
-                    <a href="{{sample['url']}}" class="shake-slow" target="_blank">source</a>
+                    <a href="<%=sample["url"]%>" class="shake-slow" target="_blank">source</a>
                 </div>
             </div>
-            {% endfor %}
+            <%end%>
         </div>
         <div class="more_samples_button">
             <a href="https://github.com/trustnotesamples" target="_blank" class="more_samples">more samples</a>
@@ -120,17 +118,17 @@
     <div id="documents" class="documents">
         <div class="documents_title">documents</div>
         <div class="doc-img">
-            <img src="{{document.img}}" alt="">
+            <img src="<%=@document_image%>" alt="">
         </div>
         <div class="doc-content">
             <div class="document_title">
-                {{document.title}}
+                <%=@document_title%>
             </div>
             <div class="document_text">
-                {{document.text}}
+                <%=@document_text%>
             </div>
             <div class="documents_url">
-                <a class="documents_url_link shake-slow" target="_blank" href="{{document.url}}">more documents</a>
+                <a class="documents_url_link shake-slow" target="_blank" href="<%=@document_url%>">more documents</a>
             </div>
         </div>
     </div>
@@ -141,24 +139,24 @@
     <div class="wapper">
         <div class="tools_title">tools</div>
         <div class="tools_contents">
-            {% for tool in tools %}
+            <%for tool in @tools%>
             <div class="tools-item">
                 <div class="tool_header">
                     <div class="tool_icon">
-                        <img class="shake-slow" src="{{ tool['icon'] }}" alt="">
+                        <img class="shake-slow" src="<%=tool["icon"]%>" alt="">
                     </div>
                     <div class="tool_title">
-                        {{ tool["title"] }}
+                        <%=tool["title"]%>
                     </div>
                 </div>
                 <div class="tool_text">
-                    {{ tool["text"] }}
+                    <%=tool["text"]%>
                 </div>
                 <div class="tool_downlowd">
-                    <a href="{{tool['url']}}" class="shake-slow" target="_blank">download</a>
+                    <a href="<%=tool["url"]%>" class="shake-slow" target="_blank">download</a>
                 </div>
             </div>
-            {% endfor %}
+            <%end%>
         </div>
     </div>
 </div>
@@ -167,25 +165,21 @@
     <div id="videos" class="videos">
         <div class="videos_title">videos</div>
         <div class="video-contents">
-            {% for video in videos %}
+            <%for video in @videos%>
             <div class="video-item shake-slow">
-                
                 <div class="bg-image">
-                    <img src="{{ video['icon'] }}" alt="">
-                    
+                    <img src="<%=video["icon"]%>" alt="">
                 </div>
 
                 <div class="mask"></div>
-
-                <a class="mask_text" href="{{video['url']}}" class="video-link" target="_blank">
+                <a class="mask_text" href="<%=video["url"]%>" class="video-link" target="_blank">
                     <div class="play_button">
                             <img src="/images/video_play.png" alt="">
                     </div>
-                    <div class="video_title">{{ video["title"] }}</div>
+                    <div class="video_title"><%=video["title"]%></div>
                 </a>
-
             </div>
-            {% endfor %}
+            <%end%>
         </div>
         <div class="clearfix"></div>
         <div class="more_videos_button">
@@ -196,13 +190,13 @@
     <div id="communitys" class="communitys">
         <div class="communitys_title">communitys</div>
         <div class="community-content">
-            {% for community in communitys %}
+            <%for community in @communitys%>
             <div class="community-item">
-                <a href="{{community['url']}}" target="_blank">
-                    <img src="{{ community['icon'] }}" title="{{ community['title'] }}">
+                <a href="<%=community["url"]%>" target="_blank">
+                    <img src="<%=community["icon"]%>" title="<%=community["title"]%>">
                 </a>
             </div>
-            {% endfor %}
+            <%end%>
         </div>
 
     </div>
