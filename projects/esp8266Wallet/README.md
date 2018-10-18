@@ -53,3 +53,6 @@ MCU：esp8266
    esp8266内置wif，无法关闭。但该硬件钱包不用esp8266联网，也不通过wifi对外服务。因此无需担心wifi会有风险。
 
 5. 未来会配置安全芯片吗？
+   有这个可能，但必须使用开源芯片。
+
+签名算法示例 https://www.programcreek.com/python/example/81785/ecdsa.SECP256k1
