@@ -433,4 +433,6 @@ HsrXxoukIaRX86Q/Z50BfsEcop20rDqTplR7LjyDZvA=
 
 ### 4. 得到当前产生的TrustMe
 
-### 5.  得到当前产生的CoinBase
+### 5. 得到当前产生的CoinBase
+
+### 6. 得到已挖数量
