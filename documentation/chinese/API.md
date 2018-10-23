@@ -1,13 +1,15 @@
 # TrustNote 2.0 API
 
-## 与支付相关的 API：
+## 与支付相关的 API
+
+所有 API 皆为 POST 方法
 
 ### 1. 生成助记词
 
-GET-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/mnemonic
+http://developers.trustnote.org/api/v1/generate/mnemonic
 ```
 
 参数：不需要
@@ -24,10 +26,10 @@ http://developers.trustnote.org/api/generate/mnemonic
 
 ### 2. 生成私钥
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/private_key
+http://developers.trustnote.org/api/v1/generate/private_key
 ```
 
 参数 json：
@@ -50,10 +52,10 @@ http://developers.trustnote.org/api/generate/private_key
 
 ### 3. 生成公钥
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/public_key
+http://developers.trustnote.org/api/v1/generate/public_key
 ```
 
 参数 json：
@@ -76,10 +78,10 @@ http://developers.trustnote.org/api/generate/public_key
 
 ### 4. 生成地址
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/address
+http://developers.trustnote.org/api/v1/generate/address
 ```
 
 参数 json：
@@ -102,10 +104,10 @@ http://developers.trustnote.org/api/generate/address
 
 ### 5. 组装交易单元
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/un_signature_unit
+http://developers.trustnote.org/api/v1/generate/un_signature_unit
 ```
 
 参数 json：
@@ -175,10 +177,10 @@ http://developers.trustnote.org/api/generate/un_signature_unit
 
 ### 6. 提取可用于签名的文本信息
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/signature_text
+http://developers.trustnote.org/api/v1/generate/signature_text
 ```
 
 返回：
@@ -217,10 +219,10 @@ http://developers.trustnote.org/api/generate/signature_text
 
 ### 7. 对需要签名的文本进行签名
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/signature
+http://developers.trustnote.org/api/v1/generate/signature
 ```
 
 参数 json：
@@ -329,10 +331,10 @@ http://developers.trustnote.org/api/generate/signature
 
 ### 9. 发送带有签名的交易单元
 
-POST-URL：
+URL：
 
 ```
-http://developers.trustnote.org/api/generate/transaction
+http://developers.trustnote.org/api/v1/generate/transaction
 ```
 
 参数 json：
