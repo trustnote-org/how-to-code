@@ -65,7 +65,7 @@
             $("#error_msg").text("Failed to login , Try again");
             $(".login_pan").shake(5, 10, 400);
           }
-          if(data=="ok"){
+          if(data=="true"){
             console.log("登录成功");
             window.location.href="/admin";
           }

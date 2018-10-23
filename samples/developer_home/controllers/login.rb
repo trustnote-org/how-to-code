@@ -19,10 +19,15 @@ class LoginScreen < Sinatra::Base
         # data = JSON.parse request.body.read
         username = params["username"]
         passwd = params["passwd"]
-
-
+        login_success = false
+        db.execute( "select * from user where username='#{username}'" ) do |row|
+            pass_word = row[2]
+            if passwd== pass_word
+                login_success = true
+            end
+        end
         
         # redirect '/login'
-        "Hello #{params}!"
+        "#{login_success}"
     end
 end
