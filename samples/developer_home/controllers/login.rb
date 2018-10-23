@@ -5,6 +5,15 @@ class LoginScreen < Sinatra::Base
     end
     
     get '/login' do
-        'login ~'
+        @title = "login"
+        erb :login
+    end
+
+    post '/login' do
+        # request.body.rewind
+        # data = JSON.parse request.body.read
+        username = params["username"]
+        passwd = params["passwd"]
+        "Hello #{params}!"
     end
 end
