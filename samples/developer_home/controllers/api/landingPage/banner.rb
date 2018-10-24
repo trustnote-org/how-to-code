@@ -1,4 +1,4 @@
-class LandingPageAPI < Sinatra::Base
+class LandingPageBannerAPI < Sinatra::Base
     enable :sessions
     
     db_file = "db/landingpage.db"
@@ -17,6 +17,10 @@ class LandingPageAPI < Sinatra::Base
     post '/api/landingPage/banner' do
 
         # id = params["id"]
+        if session[:role] != "admin"
+            return {"error" => true,"message" => "not admin"}.to_json
+        end
+        
         title = params["title"]
         text = params["text"]
         image = params["image"]

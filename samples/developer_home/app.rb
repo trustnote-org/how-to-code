@@ -5,12 +5,14 @@ require 'sinatra/base'
 require './controllers/page/index.rb'
 require './controllers/page/about.rb'
 require './controllers/page/login.rb'
+require './controllers/page/register.rb'
 require './controllers/page/admin.rb'
 require './controllers/page/upload.rb'
 
 # require controllers api
 require './controllers/api/user/login.rb'
 require './controllers/api/landingPage/banner.rb'
+require './controllers/api/landingPage/document.rb'
 
 class App < Sinatra::Base
     configure do
@@ -21,13 +23,15 @@ class App < Sinatra::Base
     use IndexScreen
     use AboutScreen
     use LoginScreen
+    use RegisterScreen
     use AdminScreen
     use UploadScreen
 
     # ... use contorllers for apis ...
 
     use LoginAPI
-    use LandingPageAPI
+    use LandingPageBannerAPI
+    use LandingPageDocumentAPI
 
     # 404 / 500
     not_found do

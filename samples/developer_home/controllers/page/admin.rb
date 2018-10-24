@@ -12,9 +12,9 @@ class AdminScreen < Sinatra::Base
         
         # @title = "admin"
 
-        # if session[:role] != "admin"
-        #     redirect '/notadmin'
-        # end
+        if session[:role] != "admin"
+            redirect '/notadmin'
+        end
 
         erb :admin
     end
@@ -23,25 +23,22 @@ class AdminScreen < Sinatra::Base
         
         # @title = "admin"
 
-        # if session[:role] != "admin"
-        #     redirect '/notadmin'
-        # end
+        if session[:role] != "admin"
+            redirect '/notadmin'
+        end
 
         erb :banner
     end
 
-    post '/save_document' do
+    get '/admin/landingPage/document' do
         
-        # request.body.rewind
-        # data = JSON.parse request.body.read
-        username = params["username"]
-        passwd = params["passwd"]
-        login_success = false
-        
-        
-        
-        # redirect '/login'
-        "#{login_success}"
+        # @title = "admin"
+
+        if session[:role] != "admin"
+            redirect '/notadmin'
+        end
+
+        erb :document
     end
 
     get '/notadmin' do
