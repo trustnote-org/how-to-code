@@ -13,6 +13,7 @@ require './controllers/page/upload.rb'
 require './controllers/api/user/login.rb'
 require './controllers/api/landingPage/banner.rb'
 require './controllers/api/landingPage/document.rb'
+require './controllers/api/landingPage/tasks.rb'
 
 class App < Sinatra::Base
     configure do
@@ -32,6 +33,7 @@ class App < Sinatra::Base
     use LoginAPI
     use LandingPageBannerAPI
     use LandingPageDocumentAPI
+    use LandingTasksAPI
 
     # 404 / 500
     not_found do
