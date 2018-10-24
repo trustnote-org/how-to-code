@@ -429,12 +429,54 @@ HsrXxoukIaRX86Q/Z50BfsEcop20rDqTplR7LjyDZvA=
 
 ### 1. 取得当前轮次
 
+```
+http://developers.trustnote.org/api/v1/info/index
+```
+
 ### 2. 获得某轮次的8个参与挖矿节点信息
 
-### 3. 得到当前产生的pow
+```
+http://developers.trustnote.org/api/v1/info/supernodes/:index
+```
 
-### 4. 得到当前产生的TrustMe
+### 3. 得到当前轮次产生的pow
 
-### 5. 得到当前产生的CoinBase
+```
+http://developers.trustnote.org/api/v1/info/pow/now
+```
 
-### 6. 得到已挖数量
+### 4. 得到某轮次产生的pow
+
+```
+http://developers.trustnote.org/api/v1/info/pow/:index
+```
+
+
+### 5. 得到当前轮次产生的TrustMe
+
+```
+http://developers.trustnote.org/api/v1/info/trustme/now
+```
+
+### 6. 得到某轮次产生的TrustMe
+
+```
+http://developers.trustnote.org/api/v1/info/trustme/:index
+```
+
+### 7. 得到当前轮次产生的CoinBase
+
+```
+http://developers.trustnote.org/api/v1/info/coinbase/now
+```
+
+### 7. 得到某轮次产生的CoinBase
+
+```
+http://developers.trustnote.org/api/v1/info/coinbase/:index
+```
+### 8. 得到已挖数量
+
+```
+http://developers.trustnote.org/api/v1/info/ttt/count
+```
