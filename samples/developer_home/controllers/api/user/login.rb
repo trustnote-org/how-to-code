@@ -1,18 +1,10 @@
 require "sqlite3"
 require "pp"
-class LoginScreen < Sinatra::Base
-    configure do
-        enable :sessions
-        set :root, File.dirname(__FILE__)
-        set :views, Proc.new { File.join(root, "../templates") }
-    end
-    
-    get '/login' do
-        @title = "login"
-        erb :login
-    end
+class LoginAPI < Sinatra::Base
 
-    post '/login' do
+    enable :sessions
+
+    post '/api/login' do
         db_file = "db/users.db"
         db = SQLite3::Database.new db_file
         # request.body.rewind
@@ -20,14 +12,17 @@ class LoginScreen < Sinatra::Base
         username = params["username"]
         passwd = params["passwd"]
         login_success = false
+        
         db.execute( "select * from user where username='#{username}'" ) do |row|
             pass_word = row[2]
             if passwd== pass_word
                 login_success = true
+                session[:username] = username
+                session[:role] = row[3]
             end
         end
-        
         # redirect '/login'
         "#{login_success}"
     end
+    
 end

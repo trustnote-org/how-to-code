@@ -18,7 +18,12 @@
             <div class="menu">
 
                     <a class="shake-slow" href="/user"><%=@username%></a>
-                    <a class="shake-slow" href="/login">login</a>
+
+                    <%if @session["username"]%>
+                        <a class="shake-slow" href="/user"><%=@session["username"]%></a>
+                    <%else%>
+                        <a class="shake-slow" href="/login">login</a>
+                    <%end%>
 
                     <a class="shake-slow" target="_blank" href="http://dev.trustnote.org:3000">explorer</a>
                     <a class="nav_menu shake-slow" url="#communitys">communitys</a>
@@ -56,7 +61,11 @@
             <a class="slide-menu-link" target="_blank" href="http://dev.trustnote.org:3000">explorer</a>
             
             <a href="/user/" class="slide-menu-link"><%=@username%></a>
-            <a href="/login" class="slide-menu-link">login</a>
+            <%if @session["username"]%>
+                <a class="shake-slow" href="/user"><%=@session["username"]%></a>
+            <%else%>
+                <a class="shake-slow" href="/login">login</a>
+            <%end%>
     </div>
 </div>
 <div class="wapper">

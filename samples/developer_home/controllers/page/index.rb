@@ -2,11 +2,13 @@ require "sqlite3"
 require "pp"
 class IndexScreen < Sinatra::Base
     configure do
+        enable :sessions
         set :root, File.dirname(__FILE__)
-        set :views, Proc.new { File.join(root, "../templates") }
+        set :views, Proc.new { File.join(root, "../../templates") }
     end
 
     get '/' do
+        @session = session
         db_file = "db/landingpage.db"
         db = SQLite3::Database.new db_file
 

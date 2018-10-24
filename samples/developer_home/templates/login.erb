@@ -55,7 +55,7 @@
           return false;
         }
         var passwd = hash_passwd(passwd);
-        $.post("/login", {username:username,passwd:passwd} ,function( data ) {
+        $.post("/api/login", {username:username,passwd:passwd} ,function( data ) {
           console.log(data)
           if(data=="err pass"){
             $("#error_msg").text("Failed to login , Try again");
