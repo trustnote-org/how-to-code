@@ -13,7 +13,7 @@ class AdminScreen < Sinatra::Base
         # @title = "admin"
 
         if session[:role] != "admin"
-            redirect '/notadmin'
+            redirect '/login'
         end
 
         erb :admin
