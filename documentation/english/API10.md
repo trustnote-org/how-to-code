@@ -8,57 +8,74 @@ Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/mnemonic
 Parameters: N/A
 Example of returned JSON object:
+```
 {
 	"mnemonic":"portion embrace slice vendor much glass oyster funny emerge misery section sign"
 }
+```
 
 ### 1.2 Generating private key
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/private_key
 Parameters: 
+```
 {
 	"mnemonic":"portion embrace slice vendor much glass oyster funny emerge misery section sign"
 }
+```
 Example of returned JSON object:
+```
 {
 	"private_key":"xxxxxx"
 }
+```
 
 ### 1.3 Generating public key
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/public_key
 Parameters: 
+```
 {
 	"private_key":"xxxxxx"
 }
+```
 Example of returned JSON object:
+```
 {
 	"public_key":"xxxxxx"
 }
+```
 
 ### 1.4 Generating address
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/address
 Parameters: 
+```
 {
 	"public_key":"xxxxxx"
 }
+```
 Example of returned JSON object:
+```
 {
 	"address":"xxxxxx"
 }
+```
 
 ### 1.5 Generating unsigned transaction unit
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/unsigned_unit
 Parameters: 
+```
 {
 	"from_public_key":"xxxxxx",
 	"to_public_key":"xxxxxx",
 	"amount":1500,
 	"timestramp":1539935363
 }
+```
 Example of returned JSON object:
+```
 {
     "unit": {
         "version": "1.0",
@@ -107,15 +124,19 @@ Example of returned JSON object:
         "payload_commission": 197,
         "timestamp": 1527068544
     }
+```
 
 ### 1.6 Generating text for signature
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/text_for_signature
 Parameters: 
+```
 {
 	TBD
 }
+```
 Example of returned JSON object:
+```
 {
     "version": "1.0",
     "alt": "1",
@@ -144,10 +165,13 @@ Example of returned JSON object:
     "last_ball_unit": "sf6F/Rjb7K/5j/GMa3XtLu6JrPCDraeOGBEX/9+FQG8=",
     "witness_list_unit": "rg1RzwKwnfRHjBojGol3gZaC5w7kR++rOR6O61JRsrQ="
 }
+```
 
 ### 1.7 Generating signed text
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/signed_text
+Parameters:
+```
 {
 	"private_key":"xxxxxx",
 	"un_signature_unit":{
@@ -179,10 +203,13 @@ URL: http://developers.trustnote.org/api/v1/generate/signed_text
         "witness_list_unit": "rg1RzwKwnfRHjBojGol3gZaC5w7kR++rOR6O61JRsrQ="
     }
 }
+```
 Example of returned JSON object:
+```
 {
  "r":"cMKJdsCjSCg1iP9VLq6QFDlv3S6tRhKaXcmJhGTMWtxlKDg6tYn7Q7LqUamjRz7JMbSmAZCP/K1LM1vA1p+/wQ=="
 }
+```
 
 ### 1.8 Generating transaction unit with signature
 Request type: N/A
@@ -190,6 +217,7 @@ URL: N/A
 Parameters: N/A
 
 Example of modified JSON object: (replace "----------------------------------------------------------------------------------------" in original transaction unit with the "r" value returned from http://developers.trustnote.org/api/v1/generate/signed_text
+```
 {
     "unit": {
         "version": "1.0",
@@ -239,11 +267,13 @@ Example of modified JSON object: (replace "-------------------------------------
         "timestamp": 1527068544
     }
 }
+```
 
 ### 1.9 Generating signed transaction unit
 Request type: POST
 URL: http://developers.trustnote.org/api/v1/generate/signed_unit
 Parameters: 
+```
 {
     "unit": {
         "version": "1.0",
@@ -293,10 +323,13 @@ Parameters:
         "timestamp": 1527068544
     }
 }
+```
 Example of returned JSON object:
+```
 {
 	"id": "HsrXxoukIaRX86Q/Z50BfsEcop20rDqTplR7LjyDZvA="
 }
+```
 Possible Errors: TBD
 
 ## 2. Explorer related requests
@@ -349,8 +382,8 @@ URL: http://developers.trustnote.org/api/v1/info/coinbase/:index
 Parameters: TBD
 Example of returned JSON object: TBD
 
-### 2.9 Retrieving the amount of TTT being mined
+### 2.9 Retrieving the total amount of TTT being mined on the network
 Request type: POST
-URL: http://developers.trustnote.org/api/v1/info/ttt/amount
+URL: http://developers.trustnote.org/api/v1/info/ttt/total_amount
 Parameters: TBD
 Example of returned JSON object: TBD
