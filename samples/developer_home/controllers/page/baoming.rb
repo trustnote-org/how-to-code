@@ -8,6 +8,10 @@ class BaomingScreen < Sinatra::Base
         erb :index
     end
 
+    get '/baoming/all' do
+        erb :all
+    end
+
     get '/baoming/new' do
         erb :post
     end

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title><%= @title %></title>
+    <link rel="stylesheet" href="/css/csshake.min.css" />
+    <link href="/css/style.css?v=1.10" rel="stylesheet">
+    <link href="/css/mobile.css?v=1.10" rel="stylesheet">
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jsSHA/src/sha.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/csshake.min.css" />
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/snake.js"></script>
+</head>
+<body>
+<div id="wrapper">  
+          <div id="cell">
+              <div class="content">
+                  <table id="table" class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>project name</th>
+                        <%# <th>project_info</th> %>
+                        <th>project github</th>
+                        <th>team name</th>
+                        <%# <th>team_info</th> %>
+                        <th>number</th>
+                        <th>weixin</th>
+                        <th>mobile</th>
+                        <th>email</th>
+                    </tr>
+                </table>
+              </div>
+          </div>
+          
+          <script>
+          $.getJSON("/api/baoming/all",function(x){
+              
+              x.forEach(element => {
+                  console.log(element);
+
+                  var id = element.id;
+                  var project_name = element.project_name;
+                  var project_info = element.project_info;
+                  var project_github = element.project_github;
+
+                  var team_type = element.team_type;
+                  var team_name = element.team_name;
+                  var team_info = element.team_info;
+                  var team_number = element.team_number;
+                  var team_weixin = element.team_weixin;
+                  var team_email = element.team_email;
+                  var team_mobile = element.team_mobile;
+
+
+                  var newRow = "<tr>"+
+                  "<th>"+id+"</th>"+
+                  "<td>"+project_name+"</td>"+
+                //   "<td>"+project_info+"</td>"+
+                  "<td>"+project_github+"</td>"+
+                  "<td>"+team_name+"</td>"+
+                //   "<td>"+team_info+"</td>"+
+                  "<td>"+team_number+"</td>"+
+                  "<td>"+team_weixin+"</td>"+
+                  "<td>"+team_email+"</td>"+
+                  "<td>"+team_mobile+"</td>"+
+                  "</tr>";
+                  $("#table tr:last").after(newRow);
+              });
+          });
+          </script>
+</div>
+</body>
+</html>

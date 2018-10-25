@@ -16,12 +16,13 @@ class BaomingAPI < Sinatra::Base
                 "project_name" => row[1], 
                 "project_info" => row[2], 
                 "project_github" => row[3], 
-                "team_name" => row[4], 
-                "team_info" => row[5],
-                "team_number" => row[6],
-                "team_weixin" => row[7],
-                "team_email" => row[8],
+                "team_type" => row[4], 
+                "team_name" => row[5],
+                "team_info" => row[6],
+                "team_number" => row[7],
+                "team_weixin" => row[8],
                 "team_mobile" => row[9],
+                "team_email" => row[10],
             }
         end
         @projects.to_json

@@ -101,7 +101,11 @@
         }
         
         $.post("/api/baoming/new", json ,function( data ) {
-          console.log(data)
+          console.log(data);
+          if(data=="ok"){
+              alert("报名成功！")
+              
+          }
         });
       });
       
