@@ -1,5 +1,7 @@
 # TrustNote 2.0 API
-Version 1.0, requests for comments only
+
+Version 1.0, requests for comments only.
+
 Last modified on Oct 25, 2018
 
 ## 1. Payment related requests
