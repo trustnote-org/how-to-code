@@ -28,6 +28,32 @@ class BaomingAPI < Sinatra::Base
         @projects.to_json
     end
 
+    get '/api/baoming/:id' do
+        db_file = "db/baoming.db"
+        db = SQLite3::Database.new db_file
+        id = params["id"]
+        @json = {
+            "error" => true
+        }.to_json
+        db.execute( "select * from project where id = #{id}" ) do |row|
+            @json = { 
+                "error" => false,
+                "id" => row[0],
+                "project_name" => row[1], 
+                "project_info" => row[2], 
+                "project_github" => row[3], 
+                "team_type" => row[4], 
+                "team_name" => row[5],
+                "team_info" => row[6],
+                "team_number" => row[7],
+                "team_weixin" => row[8],
+                "team_mobile" => row[9],
+                "team_email" => row[10],
+            }.to_json
+        end
+        @json
+    end
+
     post '/api/baoming/new' do
         db_file = "db/baoming.db"
         db = SQLite3::Database.new db_file
