@@ -4,6 +4,8 @@ Version 1.0
 
 Below is the current draft of TrustNote 2.0 API release, it is a living document, and will be updated according to feedbacks and suggestions from the community. Please share your suggestions and feedbacks in this [Reddit comment thread](https://www.reddit.com/r/trustnotedev/comments/9rfflk/trustnote_request_for_comments_on_trustnote_20/).
 
+Note this proposal has not been implemented yet, we welcome developers join us to implement and make it better. Please take a look at our [blog post](https://medium.com/trustnote/trustnote-software-developers-incentive-program-92884298c69e) for more information about TrustNote Software Developers Incentive program.
+
 Last modified on Oct 26, 2018
 
 ## 1. Payment related requests
