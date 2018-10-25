@@ -1,8 +1,8 @@
 # TrustNote 2.0 API
 
-Version 1.0. 
+Version 1.0
 
-Below is the current draft of TrustNote 2.0 API release, it is a living document, and will be updated according to feedbacks and suggestions from the community. Please share your feedback in this [Reddit comment thread](https://www.reddit.com/r/trustnotedev/comments/9rfflk/trustnote_request_for_comments_on_trustnote_20/).
+Below is the current draft of TrustNote 2.0 API release, it is a living document, and will be updated according to feedbacks and suggestions from the community. Please share your suggestions and feedbacks in this [Reddit comment thread](https://www.reddit.com/r/trustnotedev/comments/9rfflk/trustnote_request_for_comments_on_trustnote_20/).
 
 Last modified on Oct 26, 2018
 
