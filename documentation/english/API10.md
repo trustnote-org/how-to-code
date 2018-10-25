@@ -1,6 +1,8 @@
 # TrustNote 2.0 API
 
-Version 1.0, requests for comments only.
+Version 1.0. 
+
+TrustNote is requesting community for comments.
 
 Last modified on Oct 25, 2018
 
