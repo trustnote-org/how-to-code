@@ -7,7 +7,7 @@ class LandingTasksAPI < Sinatra::Base
     get '/api/landingPage/tasks' do
         @tasks=[]
         db.execute( "select id,icon,title,text,url,status from task" ) do |row|
-            @tasks << { "icon" => row[1], "title" => row[2], "text" => row[3], "url" => row[4], "status" => row[5] }
+            @tasks << { "id" => row[0],"icon" => row[1], "title" => row[2], "text" => row[3], "url" => row[4], "status" => row[5] }
         end
         @tasks.to_json
     end
