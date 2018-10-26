@@ -6,23 +6,33 @@
 
 ruby + sqlite3 + trustnote-pow-supernode + RPC-rubySDK
 
-后端语言：ruby
+业务层：golang
 
-开发框架：Sinatra
+web层：ruby（开发框架 Sinatra、前端渲染模板 erb）
 
-前端渲染模板：erb
+数据层：kv + sqlite3
 
-数据库：sqlite3
+公链层：trustnote-pow-supernode
 
-区块链：trustnote-pow-supernode
-
-和区块链之间进行交互的：RPC-rubySDK
+服务层：RPC-rubySDK
 
 
 
 ### why ruby ？
 
-基于敏捷开发的原则，我们排除了java、c#等笨重语言，优先考虑go、python、ruby、haskell以及nodejs。因为nodejs需要依赖，而nodejs社区发展速度过快，导致很多依赖必须不停更新，无形中带来一种不稳定的因素。go和python是理想的语言，go支持并发，简单易学，但其编成风格不够灵活。haskell是我特别喜欢的语言，其函数式编成是我多年所推崇的。但因为会haskell的人不多，因此不利于社区开发者去维护。python适合团队作战，库类丰富，我有多年的python编程经验，因此开发者社区第一个版本是用python写的。最终选择ruby，是因为ruby的灵活性可以足够的敏捷，这对于我们目前人手不多的情况下，是最优选择。
+1. 要敏捷
+基于敏捷开发的原则，我们排除了java、c#等笨重语言，优先考虑go、python、ruby、haskell以及nodejs。
+python适合团队作战，库类丰富，我有多年的python编程经验，因此开发者社区第一个版本是用python写的。最终选择ruby，是因为ruby的灵活性可以足够的敏捷，这对于我们目前人手不多的情况下，是最优选择。
+
+2. 要稳定
+因为nodejs需要依赖，而nodejs社区发展速度过快，导致很多依赖必须不停更新，无形中带来一种不稳定的因素。
+
+3. 要灵活
+go和python是理想的语言，go支持并发，简单易学，但其编成风格不够灵活，因为缺少语法糖，所以不够灵活。
+
+4. 要生态
+haskell是我特别喜欢的语言，其函数式编成是我多年所推崇的。但因为会haskell的人不多，因此不利于社区开发者去维护。ruby有丰富的库，具备良好的生态。
+
 
 
 
@@ -71,3 +81,6 @@ gem install sinatra
 http://localhost:8080
 ```
 
+### 开发原则
+
+循序渐进、小步快跑、先发布后迭代，软件不是工程，是生命。软件不是按照规划生搬硬套地实施，而是根据实际情况灵活敏捷的生长。

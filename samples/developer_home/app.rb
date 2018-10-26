@@ -9,6 +9,8 @@ require './controllers/page/register.rb'
 require './controllers/page/admin.rb'
 require './controllers/page/upload.rb'
 require './controllers/page/baoming.rb'
+require './controllers/page/user.rb'
+require './controllers/page/set.rb'
 
 # require controllers api
 require './controllers/api/user/login.rb'
@@ -29,6 +31,8 @@ class App < Sinatra::Base
     use RegisterScreen
     use AdminScreen
     use UploadScreen
+    use UserScreen
+    use SetScreen
 
     use BaomingScreen
 

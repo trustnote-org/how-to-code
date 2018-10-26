@@ -69,6 +69,10 @@
             console.log("登录成功");
             window.location.href="/admin";
           }
+          if(data=="false"){
+            $("#error_msg").text("密码错误");
+            $(".login_pan").shake(5, 10, 400);
+          }
         });
       });
       

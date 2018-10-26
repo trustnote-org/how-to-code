@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title><%= @title %></title>
+    <link rel="stylesheet" href="/css/csshake.min.css" />
+    <link href="/css/style.css?v=1.10" rel="stylesheet">
+    <link href="/css/mobile.css?v=1.10" rel="stylesheet">
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jsSHA/src/sha.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/csshake.min.css" />
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/snake.js"></script>
+</head>
+<body>
+<div id="wrapper">  
+          <div class="pan">
+                      <div id="error_msg"></div>
+                      <div class="form-group">
+                        <label for="team_info">旧密码</label>
+                        <input type="password" id="oldpasswd" class="form-control" name="oldpasswd" placeholder="oldpasswd" value="">
+                      </div>
+                      <div class="form-group">
+                        <label for="team_info">新密码</label>
+                        <input type="password" id="newpasswd" class="form-control" name="newpasswd" placeholder="newpasswd" value="">
+                      </div>
+                      <input id="button" type="button" class="btn btn-primary" name="" value="change">
+                      </div>
+
+</div>
+ <script type="text/javascript">
+      function hash_passwd(passwd){
+        var shaObj = new jsSHA("SHA-224", "TEXT");
+        shaObj.update(passwd);
+        return shaObj.getHash("HEX");
+      }
+      $("#button").click(function(){
+        oldpasswd = $("#oldpasswd").val();
+        if (oldpasswd.length < 2){
+          $("#oldpasswd").shake(5, 10, 400);
+          return false;
+        }
+        
+        newpasswd = $("#newpasswd").val();
+        if (newpasswd.length < 2){
+          $("#newpasswd").shake(5, 10, 400);
+          return false;
+        }
+        var oldpasswd = hash_passwd(oldpasswd);
+        var newpasswd = hash_passwd(newpasswd);
+
+        $.post("/user/set/passwd", {oldpasswd:oldpasswd,newpasswd:newpasswd} ,function( data ) {
+
+            $("#error_msg").text("");
+
+            json = JSON.parse(data);
+            console.log(json)
+
+          if(json.error==true){
+            $("#error_msg").text(json.message);
+            $(".pan").shake(5, 10, 400);
+          }
+          if(json.change==true){
+              alert("更改密码成功，请重新登陆")
+            console.log("更改密码成功，请重新登陆");
+            window.location.href="/logout";
+          }
+        });
+      });
+      
+    </script>
+</body>
+</html>
