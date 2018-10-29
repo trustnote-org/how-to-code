@@ -65,8 +65,17 @@ haskell是我特别喜欢的语言，其函数式编成是我多年所推崇的�
 ### 安装
 
 ```
-sudo apt install ruby
+sudo apt install ruby ruby-dev
+```
+
+or
+
+```
+curl -L  get.rvm.io | bash -s stable
+rvm install 2.2.2
+source /etc/profile.d/rvm.sh
 gem install sinatra
+gem install sqlite3
 ```
 
 ### 运行
