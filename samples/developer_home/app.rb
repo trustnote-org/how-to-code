@@ -12,12 +12,15 @@ require './controllers/page/baoming.rb'
 require './controllers/page/user.rb'
 require './controllers/page/set.rb'
 
+
+# landingPages
+
+require './controllers/page/admin/landingpage/banner.rb'
+require './controllers/page/admin/landingpage/document.rb'
+require './controllers/page/admin/landingpage/task.rb'
+
 # require controllers api
 require './controllers/api/user/login.rb'
-require './controllers/api/landingPage/banner.rb'
-require './controllers/api/landingPage/document.rb'
-require './controllers/api/landingPage/tasks.rb'
-require './controllers/api/baoming/baoming.rb'
 
 class App < Sinatra::Base
     configure do
@@ -36,14 +39,15 @@ class App < Sinatra::Base
 
     use BaomingScreen
 
+    # admin
+
+    use AdminDocumentScreen
+    use AdminBannerScreen
+    use AdminTaskScreen
+
     # ... use contorllers for apis ...
 
     use LoginAPI
-    use LandingPageBannerAPI
-    use LandingPageDocumentAPI
-    use LandingTasksAPI
-
-    use BaomingAPI
 
     # 404 / 500
     not_found do

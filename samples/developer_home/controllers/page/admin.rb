@@ -25,39 +25,6 @@ class AdminScreen < Sinatra::Base
         erb :admin
     end
 
-    get '/admin/landingPage/banner' do
-        
-        # @title = "admin"
-
-        if session[:role] != "admin"
-            redirect '/notadmin'
-        end
-
-        erb :banner
-    end
-
-    get '/admin/landingPage/document' do
-        
-        # @title = "admin"
-
-        if session[:role] != "admin"
-            redirect '/notadmin'
-        end
-
-        erb :document
-    end
-
-    get '/admin/landingPage/tasks' do
-        
-        # @title = "admin"
-
-        if session[:role] != "admin"
-            redirect '/notadmin'
-        end
-
-        erb :tasks
-    end
-
     get '/notadmin' do
         "not admin"
     end

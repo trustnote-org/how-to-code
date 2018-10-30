@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title><%= @title %></title>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form method="post">
+        <input type="hidden" name="id" value="<%=@banner_id%>">
+        <div class="form-group">
+            <label for="title">title</label>
+            <input type="text" class="form-control" name="title" value="<%=@banner_title%>" placeholder="title">
+        </div>
+        <div class="form-group">
+            <label for="text">text</label>
+            <textarea type="text" class="form-control" name="text" placeholder="textarea"><%=@banner_text%></textarea>
+        </div>
+        <%# <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" name="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div> %>
+        <div class="form-group">
+            <label for="image">image</label>
+            <input type="text" class="form-control" name="image" value="<%=@banner_image%>" placeholder="image">
+        </div>
+        <button type="submit" id="submit" class="btn btn-default">Submit</button>
+    </form>
+</body>
+</html>

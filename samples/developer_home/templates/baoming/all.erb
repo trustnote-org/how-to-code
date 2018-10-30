@@ -32,46 +32,23 @@
                         <th>mobile</th>
                         <th>email</th>
                     </tr>
+                    <%for project in @projects%>
+                        <tr>
+                            <th><%=project["id"]%></th>
+                            <th><%=project["project_name"]%></th>
+                            <%# <th><%=project["project_info"]%></th>
+                            <th><%=project["project_github"]%></th>
+                            <th><%=project["team_name"]%></th>
+                            <%# <th>team_info</th> %>
+                            <th><%=project["team_number"]%></th>
+                            <th><%=project["team_weixin"]%></th>
+                            <th><%=project["team_mobile"]%></th>
+                            <th><%=project["team_email"]%></th>
+                        </tr>
+                    <%=end%>
                 </table>
               </div>
           </div>
-          
-          <script>
-          $.getJSON("/api/baoming/all",function(x){
-              
-              x.forEach(element => {
-                  console.log(element);
-
-                  var id = element.id;
-                  var project_name = element.project_name;
-                  var project_info = element.project_info;
-                  var project_github = element.project_github;
-
-                  var team_type = element.team_type;
-                  var team_name = element.team_name;
-                  var team_info = element.team_info;
-                  var team_number = element.team_number;
-                  var team_weixin = element.team_weixin;
-                  var team_email = element.team_email;
-                  var team_mobile = element.team_mobile;
-
-
-                  var newRow = "<tr>"+
-                  "<th>"+id+"</th>"+
-                  "<td>"+project_name+"</td>"+
-                //   "<td>"+project_info+"</td>"+
-                  "<td>"+project_github+"</td>"+
-                  "<td>"+team_name+"</td>"+
-                //   "<td>"+team_info+"</td>"+
-                  "<td>"+team_number+"</td>"+
-                  "<td>"+team_weixin+"</td>"+
-                  "<td>"+team_email+"</td>"+
-                  "<td>"+team_mobile+"</td>"+
-                  "</tr>";
-                  $("#table tr:last").after(newRow);
-              });
-          });
-          </script>
 </div>
 </body>
 </html>

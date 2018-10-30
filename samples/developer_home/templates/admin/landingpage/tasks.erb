@@ -10,19 +10,15 @@
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <form>
         
     <table id="table" class="table">
         <tr>
             <th>#</th>
             <th>title</th>
         </tr>
-        <%for task in @tasks%>
-        <tr>
-            <th><%=task["id"]%></th>
-            <th><%=task["title"]%></th>
-        </tr>
-        <%=end%>
     </table>
-
+    
+    </form>
 </body>
 </html>
