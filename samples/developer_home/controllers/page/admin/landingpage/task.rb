@@ -20,8 +20,6 @@ class AdminTaskScreen < Sinatra::Base
         db.execute( "select id,icon,title,text,url,status from task" ) do |row|
             @tasks << { "id" => row[0],"icon" => row[1], "title" => row[2], "text" => row[3], "url" => row[4], "status" => row[5] }
         end
-        @tasks.to_json
-
         erb :tasks
     end
 end

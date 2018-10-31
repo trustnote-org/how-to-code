@@ -4,51 +4,40 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title><%= @title %></title>
-    <link rel="stylesheet" href="/css/csshake.min.css" />
+    <title><%=@title%></title>
     <link href="/css/style.css?v=1.10" rel="stylesheet">
-    <link href="/css/mobile.css?v=1.10" rel="stylesheet">
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/bower_components/jsSHA/src/sha.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/csshake.min.css" />
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/snake.js"></script>
 </head>
 <body>
-<div id="wrapper">  
-          <div id="cell">
-              <div class="content">
-                  <table id="table" class="table">
-                    <tr>
-                        <th>#</th>
-                        <th>project name</th>
-                        <%# <th>project_info</th> %>
-                        <th>project github</th>
-                        <th>team name</th>
-                        <%# <th>team_info</th> %>
-                        <th>number</th>
-                        <th>weixin</th>
-                        <th>mobile</th>
-                        <th>email</th>
-                    </tr>
-                    <%for project in @projects%>
-                        <tr>
-                            <th><%=project["id"]%></th>
-                            <th><%=project["project_name"]%></th>
-                            <%# <th><%=project["project_info"]%></th>
-                            <th><%=project["project_github"]%></th>
-                            <th><%=project["team_name"]%></th>
-                            <%# <th>team_info</th> %>
-                            <th><%=project["team_number"]%></th>
-                            <th><%=project["team_weixin"]%></th>
-                            <th><%=project["team_mobile"]%></th>
-                            <th><%=project["team_email"]%></th>
-                        </tr>
-                    <%=end%>
-                </table>
-              </div>
-          </div>
+<div id="wrapper">
+    <div id="cell">
+        <div class="content">
+            <table id="table" class="table">
+                <tr>
+                    <th>time</th>
+                    <th>project name</th>
+                    <th>project github</th>
+                    <th>team name</th>
+                    <th>weixin</th>
+                    <th>email</th>
+                    <th>more</th>
+                </tr>
+                <%for project in @projects%>
+                <tr>
+                    <th><%=project["time"]%></th>
+                    <th><%=project["project_name"]%></th>
+                    <th><%=project["project_github"]%></th>
+                    <th><%=project["team_name"]%></th>
+                    <th><%=project["team_weixin"]%></th>
+                    <th><%=project["team_email"]%></th>
+                    <th><a href="/baoming/<%=project["id"]%>">more</a></th>
+                </tr>
+                <%end%>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

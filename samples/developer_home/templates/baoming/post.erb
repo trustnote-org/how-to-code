@@ -7,32 +7,87 @@
     <title><%= @title %></title>
     <link rel="stylesheet" href="/css/csshake.min.css" />
     <link href="/css/style.css?v=1.10" rel="stylesheet">
-    <link href="/css/mobile.css?v=1.10" rel="stylesheet">
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/jsSHA/src/sha.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/csshake.min.css" />
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/snake.js"></script>
+    <style>
+    body{
+        background:#f8f9fb;
+    }
+    #wrapper{
+        text-align: center;
+    }
+    .content{
+        max-width:800px;
+        width:90%;
+        margin:20px auto;
+        
+        padding:20px 110px 20px 110px;
+        background:#fff;
+    }
+    .form-group{
+        width:90%;
+        max-width:580px;
+        margin:10px auto;
+        text-align: left;
+    }
+    .form-control,input{
+        height:48px;
+    }
+    .red{
+        color:#f00;
+    }
+    .btn{
+        width:90%;
+        max-width:580px;
+    }
+    .banner{
+        display:table;
+        width:100%;
+        height: 200px;
+        background: url(/img/baoming_banner.png);
+        margin: 0;
+    }
+    .banner h2{
+        color: #fff;
+        vertical-align: middle;
+        display: table-cell;
+    }
+    </style>
 </head>
 <body>
 <div id="wrapper">  
+          <div class="banner">
+            <h2>TrustNote 支付应用大赛报名表</h2>
+          </div>
           <div id="cell">
               <div class="content">
-                  <form>
+                  <form method="post">
+                    <p>必填项</p>
                     <div class="form-group">
-                        <label for="project_name">项目名称</label>
+                        <label for="project_name">项目名称 <span class="red">*</span></label>
                         <input type="text" class="form-control" id="project_name" placeholder="此处输入项目名称">
                     </div>
+                    <div class="form-group">
+                        <label for="project_github">github <span class="red">*</span></label>
+                        <p>为该项目新建一个github仓库，在评审截至日期（12月1日）之前，可以没有任何代码</p>
+                        <input type="text" class="form-control" id="project_github" placeholder="项目github地址">
+                    </div>
+                    <div class="form-group">
+                        <label for="team_email">email <span class="red">*</span></label>
+                        <input type="text" class="form-control" id="team_email" placeholder="请输入email">
+                    </div>
+
+                    <p>选填项</p>
+
                     <div class="form-group">
                         <label for="project_info">项目介绍</label>
                         <textarea type="text" class="form-control" id="project_info" placeholder="项目介绍"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="project_github">项目github地址</label>
-                        <p>为该项目新建一个github仓库，在评审截至日期（12月1日）之前，可以没有任何代码</p>
-                        <input type="text" class="form-control" id="project_github" placeholder="项目github地址">
-                    </div>
+                    
 
                     <div class="form-group">
                         <label for="team_name">团队名称</label>
@@ -54,17 +109,14 @@
                         <input type="text" class="form-control" id="team_weixin" placeholder="请输入微信">
                     </div>
 
-                    <div class="form-group">
-                        <label for="team_email">email地址</label>
-                        <input type="text" class="form-control" id="team_email" placeholder="请输入email">
-                    </div>
+                    
 
                     <div class="form-group">
                         <label for="team_mobile">联系电话</label>
                         <input type="text" class="form-control" id="team_mobile" placeholder="请输入电话号码">
                     </div>
 
-                    <button type="button" id="submit" class="btn btn-default">立刻报名</button>
+                    <button type="submit" id="submit" class="btn btn-default">立刻报名</button>
                 </form>
               </div>
           </div>
@@ -78,36 +130,28 @@
       $("#submit").click(function(){
 
         project_name = $("#project_name").val();
-        project_info = $("#project_info").val();
         project_github = $("#project_github").val();
+        team_email = $("#team_email").val();
 
+        project_info = $("#project_info").val();
         team_name = $("#team_name").val();
         team_info = $("#team_info").val();
         team_number = $("#team_number").val();
         team_weixin = $("#team_weixin").val();
-        team_email = $("#team_email").val();
         team_mobile = $("#team_mobile").val();
 
-        json = {
-            "project_name":project_name,
-            "project_info":project_info,
-            "project_github":project_github,
-            "team_name":team_name,
-            "team_info":team_info,
-            "team_number":team_number,
-            "team_weixin":team_weixin,
-            "team_email":team_email,
-            "team_mobile":team_mobile
+        if(project_name.length==1){
+            return false;
+        }
+
+        if(project_github.length==1){
+            return false;
+        }
+
+        if(team_email.length==1){
+            return false;
         }
         
-        $.post("/api/baoming/new", json ,function( data ) {
-          console.log(data);
-          if(data=="ok"){
-              alert("报名成功！")
-              window.location.href="/baoming/success"
-              
-          }
-        });
       });
       
     </script>

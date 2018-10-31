@@ -17,6 +17,12 @@
             <th>#</th>
             <th>title</th>
         </tr>
+        <%for task in @tasks%>
+        <tr>
+            <th><%=task["id"]%></th>
+            <th><%=task["title"]%></th>
+        </tr>
+        <%end%>
     </table>
     
     </form>
