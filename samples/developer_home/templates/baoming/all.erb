@@ -26,7 +26,7 @@
                 </tr>
                 <%for project in @projects%>
                 <tr>
-                    <th><%=project["time"]%></th>
+                    <th><local-time><%=project["time"]%></local-time></th>
                     <th><%=project["project_name"]%></th>
                     <th><%=project["project_github"]%></th>
                     <th><%=project["team_name"]%></th>
