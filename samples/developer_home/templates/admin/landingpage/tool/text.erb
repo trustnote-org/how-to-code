@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title><%= @title %></title>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form method="post">
+        <div class="form-group">
+            <label for="title">title</label>
+            <input class="form-control" type="text" name="title" value="<%=@item["title"]%>" />
+        </div>
+        <div class="form-group">
+            <label for="icon">icon</label>
+            <input class="form-control" type="text" name="icon" value="<%=@item["icon"]%>" />
+        </div>
+        <div class="form-group">
+            <label for="text">text</label>
+            <input class="form-control" type="text" name="text" value="<%=@item["text"]%>" />
+        </div>
+        <div class="form-group">
+            <label for="url">url</label>
+            <input class="form-control" type="text" name="url" value="<%=@item["url"]%>" />
+        </div>
+        <input class="btn btn-default" type="submit" value="update" />
+    </form>
+</body>
+</html>

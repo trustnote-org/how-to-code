@@ -16,11 +16,13 @@
         <tr>
             <th>#</th>
             <th>title</th>
+            <th>edit</th>
         </tr>
         <%for item in @items%>
         <tr>
             <th><%=item["id"]%></th>
             <th><%=item["title"]%></th>
+            <th><a href="/admin/landingPage/community/edit/<%=item["id"]%>">edit</a></th>
         </tr>
         <%end%>
     </table>
