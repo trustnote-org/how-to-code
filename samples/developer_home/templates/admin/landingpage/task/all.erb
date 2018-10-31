@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title><%= @title %></title>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form>
+    <a href="/admin/landingpage/task/new">new</a>
+    <table id="table" class="table">
+        <tr>
+            <th>#</th>
+            <th>title</th>
+            <th>edit</th>
+        </tr>
+        <%for item in @items%>
+        <tr>
+            <th><%=item["id"]%></th>
+            <th><%=item["title"]%></th>
+            <th><a href="/admin/landingPage/task/edit/<%=item["id"]%>">edit</a></th>
+        </tr>
+        <%end%>
+    </table>
+    
+    </form>
+</body>
+</html>

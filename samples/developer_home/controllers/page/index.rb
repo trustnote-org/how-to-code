@@ -31,7 +31,7 @@ class IndexScreen < Sinatra::Base
         end
 
         @samples=[]
-        db.execute( "select id,icon,title,text,url from task" ) do |row|
+        db.execute( "select id,icon,title,text,url from sample" ) do |row|
             @samples << { "icon" => row[1], "title" => row[2], "text" => row[3], "url" => row[4] }
         end
 

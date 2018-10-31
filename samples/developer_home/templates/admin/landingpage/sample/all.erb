@@ -11,16 +11,18 @@
 </head>
 <body>
     <form>
-        
+    <a href="/admin/landingpage/sample/new">new</a>
     <table id="table" class="table">
         <tr>
             <th>#</th>
             <th>title</th>
+            <th>edit</th>
         </tr>
-        <%for task in @tasks%>
+        <%for item in @items%>
         <tr>
-            <th><%=task["id"]%></th>
-            <th><%=task["title"]%></th>
+            <th><%=item["id"]%></th>
+            <th><%=item["title"]%></th>
+            <th><a href="/admin/landingPage/sample/edit/<%=item["id"]%>">edit</a></th>
         </tr>
         <%end%>
     </table>

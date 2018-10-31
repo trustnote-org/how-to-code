@@ -5,7 +5,7 @@ class AdminScreen < Sinatra::Base
     configure do
         enable :sessions
         set :root, File.dirname(__FILE__)
-        set :views, Proc.new { File.join(root, "../../templates/admin") }
+        set :views, Proc.new { File.join(root, "../../../templates/admin") }
     end
 
     # before do
