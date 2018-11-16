@@ -80,7 +80,7 @@ http://150.109.57.242:6001/api/v1/asset/balance/:address/:asset
 ```
 $.getJSON("/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT",function(josn){
  console.log(json.data.stable);
-})l
+})
 ```
 
 
