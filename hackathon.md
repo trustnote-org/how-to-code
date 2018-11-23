@@ -1,10 +1,45 @@
-# hackathon 
+# hackathon 黑客松活动
 
-一、register
+没有实际应用的区块链项目都是空气项目。目前很多区块链上面有很多dapp。但是那些dapp毫无意义和用处。trustnote可即时支付，对iot设备友好的公链，通过api，你可以把何物联网设备和支持场景无缝衔接在一起。
+
+一、register 报名
+
+猛击下面的链接，进入报名。
 
 http://developers.trustnote.org/hackathon/register
 
-二、SDK
+二、api 与 sdk
+
+我们提供了友好的精简api，您可以根据api自己构建trustnote钱包。
+
+```
+npm install wallet-base --save
+```
+
+```
+npm install wallet-base --save
+```
+
+```
+const Client = require('wallet-base')
+
+// 助记词
+let mnemonic = Client.mnemonic()
+
+// 私钥
+let privkey = Client.xPrivKey(mnemonic)
+
+// 钱包公钥
+let walletPubkey = Client.walletPubKey(privkey, 0)
+
+// 地址
+let address = Client.walletAddress(walletPubkey, 0, 0)
+```
+
+
+
+
+
 
 https://github.com/trustnote/how-to-code/blob/master/devkit/payment/trustnote.js
 
