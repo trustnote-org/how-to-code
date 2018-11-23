@@ -13,43 +13,90 @@ http://developers.trustnote.org/hackathon/register
 我们提供了友好的精简api，您可以根据api自己构建trustnote钱包。
 
 
+1）安装核心库
 
+只需要一条命令，核心库就安装好了。
 ```
 npm install wallet-base --save
 ```
-
+2）引入核心库
 ```
 const Client = require('wallet-base')
+```
 
+3) 生成助记词
+
+```
 // 助记词
 let mnemonic = Client.mnemonic()
+```
 
+4）生成私钥
+
+```
 // 私钥
 let privkey = Client.xPrivKey(mnemonic)
+```
 
+5) 生成钱包公钥
+```
 // 钱包公钥
 let walletPubkey = Client.walletPubKey(privkey, 0)
+```
 
+6)生成钱包地址
+```
 // 地址
 let address = Client.walletAddress(walletPubkey, 0, 0)
 ```
 
+7）注册钱包
 
+提交钱包公钥即可完成注册。
 
+post
 
+http://150.109.57.242:6001/api/v1/account/register
 
-4. get balance 查询余额
+提交格式
+```
+{
+  "pubkey": "xpub6BwQQwThGkpzP5uLJ8NMXMFLsFt1B7rqNyeNTB3VXGb95eoK1caM5JpmPAMg8vJQf7d86689qwtGeRC4KL4fVTvMtp9u5W8jo5V5GiRNMNo"
+}
+```
+
+成功后，如果没有发生错误，会返回钱包地址，该钱包地址和第6步生成的钱包地址是一样的。因此可以注册时用返回的地址和生成的地址进行比对，以此判断注册成功与否。
+
+8） 查询余额
 
 GET方式提交
 ```
 http://150.109.57.242:6001/api/v1/asset/balance/:address/:asset
 ```
-返回如下信息
+
+如：
 ```
 $.getJSON("/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT",function(josn){
  console.log(json.data.stable);
 })
 ```
+
+返回如下信息：
+```
+{
+  "network": "devnet",
+  "errCode": 0,
+  "errMsg": "success",
+  "data": {
+    "stable": 25,
+    "pending": 80451
+  }
+}
+```
+
+其中，stable是稳定状态的余额，pending是未稳定状态下的余额，两项加在一起，是该钱包的实际总额。
+
+
 
 三、通用钱包小程序jssdk
 
