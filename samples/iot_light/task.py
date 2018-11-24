@@ -13,8 +13,8 @@ balance = stable + pending
 if balance > 1000
   # turn on
   gpio.on(10)
-  sleep(30)
   #transfer(balance,"xxxxxx") # transfer balance to xxxxxx(address)
+  puts 60*60
 else
   gpio.off(10)
 end
