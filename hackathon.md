@@ -52,7 +52,7 @@ let address = Client.walletAddress(walletPubkey, 0, 0)
 
 7）注册钱包
 
-提交钱包公钥即可完成注册。
+提交钱包公钥即可完成注册。钱包必须经过注册，才能使用。不注册就不能使用api。
 
 post
 
@@ -75,7 +75,7 @@ http://150.109.57.242:6001/api/v1/asset/balance/:address/:asset
 
 如：
 ```
-$.getJSON("/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT",function(josn){
+$.getJSON("http://150.109.57.242:6001/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT",function(josn){
  console.log(json.data.stable);
 })
 ```
@@ -94,6 +94,22 @@ $.getJSON("/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT",function(
 ```
 
 其中，stable是稳定状态的余额，pending是未稳定状态下的余额，两项加在一起，是该钱包的实际总额。
+
+该方法可以用来做什么？
+
+付费点灯
+
+应用场景：在一个共享自习室中，每个写字桌上面有一个台灯，上面有一个二维码。用户扫码支付TTT，这个时候台灯就可以亮1小时。1小时过后，需要再次支付。
+
+如何实现？
+
+关键源码在这里：https://github.com/trustnote/how-to-code/blob/master/samples/iot_light/task.py
+
+这个脚本是一个任务脚本，由linux系统任务每10秒钟执行一次。如果发现有钱就对gpio输出高电平，这样继电器就会让电灯通电。电灯通电后，脚本调用转账命令，把这个灯里的钱转走，同时输出一个 1小时的秒数，告诉任务管理器，下一次执行检测余额任务是1小时之后。
+
+这个api还能做什么？
+
+可以制作投票程序。每个选项是一个钱包地址，通过统计钱包余额，用余额做选票的投票数。
 
 9）构建支付
 
@@ -175,6 +191,10 @@ http://150.109.57.242:6001/api/v1/asset/txinfo/F8ofJgi8wokp0uIetxK%2fxwg3aAJ5t7P
 ```
 {"network":"devnet","errCode":0,"errMsg":"success","data":{"unit":{"unit":"F8ofJgi8wokp0uIetxK/xwg3aAJ5t7Pvln2MNLGyS8M=","version":"1.0","alt":"1","witness_list_unit":"MtzrZeOHHjqVZheuLylf0DX7zhp10nBsQX5e/+cA3PQ=","last_ball_unit":"FU7+kILFFfH4UK2pIctXWbO6kNliAVP3toei/HHxbiE=","last_ball":"HlVm3tqKy6hWYR3ia/Qat5oNeOxTbxW2siBwhGtdmrc=","headers_commission":714,"payload_commission":358,"main_chain_index":153960,"timestamp":1539789830,"parent_units":["91IvDcfFy37zKdJ30WXbyUl6/bD2ip1Y6tmBUnK4YW8="],"earned_headers_commission_recipients":[{"address":"OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ","earned_headers_commission_share":100}],"authors":[{"address":"5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH","authentifiers":{"r":"nC+l/MzXcqsYyHjurBqEUasUz3Eje8TF6XbIuKXZgWw0CsXBF8ORE+0EiHO4PdqGUijDtQ3XNCaa1OFT7I3NpA=="}},{"address":"OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ","authentifiers":{"r.0.0":"nC+l/MzXcqsYyHjurBqEUasUz3Eje8TF6XbIuKXZgWw0CsXBF8ORE+0EiHO4PdqGUijDtQ3XNCaa1OFT7I3NpA=="},"definition":["or",[["and",[["address","5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp",">",1531299600000]]]],["and",[["address","752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp","=",0]]]]]]}],"messages":[{"app":"payment","payload_hash":"FOfA6SWV/0UVgefXXHMsGk0U4u7lNqo5ewVwZLhNaMc=","payload_location":"inline","payload":{"inputs":[{"unit":"4Cq1KWx1vmXO1L35F6cUj6yXilweVgBn9lCG6d/MLa4=","message_index":0,"output_index":1}],"outputs":[{"address":"OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ","amount":88928}]}},{"app":"payment","payload_hash":"grQJshnOKYhYUQCuS1tXEJ7X3schjU5FyGdJ8uvUUy8=","payload_location":"inline","payload":{"inputs":[{"unit":"eap7glIf3PDZ95doA+ngk3vdhFDUhhoQmBn+Cj5SU/A=","message_index":1,"output_index":0}],"asset":"7acKn25O/OuxUHJFXFHOACvNWpSDejx/BzxcWsQ8qzY=","outputs":[{"address":"LVP5X4PB2T757EIWJPACVLACLOOEMAVV","amount":150}]}}]},"ball":"ZEHEija1zDNT2Bc52pmmrEZ+Az89lkLAnEpiClUxt94=","skiplist_units":["KkXI52tTaQSiOz6buEK7i/rJEYuz6rGW7tCGfeqms0M="],"arrShareDefinition":[{"arrDefinition":["or",[["and",[["address","5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp",">",1531299600000]]]],["and",[["address","752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp","=",0]]]]]],"assocSignersByPath":{"r.0.0":{"device_address":"0YJBUFXU6NX3YII2NZWXBE63CMCKH53BM","address":"5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH","member_signing_path":"r"},"r.1.0":{"device_address":"0IQQISCHCS7OHLNPSZKG2W4CLJCNV3QXW","address":"752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM","member_signing_path":"r"}}}]}}
 ```
+
+这个api可以做什么？
+
+我们可以制作一个抽奖程序。根据参与用户（历史支付记录）作为一个序列，产生一个随即数，从这个序列里产生一个中奖者。
 
 三、通用钱包小程序jssdk
 
