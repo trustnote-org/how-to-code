@@ -38,6 +38,10 @@ let mnemonic = Client.mnemonic()
 let privkey = Client.xPrivKey(mnemonic)
 ```
 
+这个api还能做什么？
+
+脑钱包。用任意词汇作为助记词，生成私钥。用户随意输入任何自负，返回一个私钥。
+
 5) 生成钱包公钥
 ```
 // 钱包公钥
