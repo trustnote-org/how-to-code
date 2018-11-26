@@ -1,91 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>TrustNote</title>
-  <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/static/js/trustnote.js"></script>
-  <style media="screen">
-      .more{
-        display: none;
-      }
-    </style>
- </head>
- <body>
-  <div class="container">
-    <p></p>
-   <h2>little prince</h2>
-   <hr />
-   <p>Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature, about the primeval forest. It was a picture of a boa constrictor in the act of swallowing an animal. Here is a copy of the drawing...</p>
 
-   <button id="pay_for_read" type="button" class="btn btn-primary">pay 10 TTT to read more</button>
-   <pre id="debug"></pre>
-   <div class="more">
-    <p>In the book it said: &quot;Boa constrictors swallow their prey whole, without chewing it. After that they are not able to move, and they sleep through the six months that they need for digestion.&quot; </p>
-    <p>I pondered deeply, then, over the adventures of the jungle. And after some work with a colored pencil I succeeded in making my first drawing. My Drawing Number One. It looked like this:</p>
-    <p>I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened them. </p>
-    <p>But they answered: &quot;Frighten? Why should any one be frightened by a hat?&quot; </p>
-    <p>My drawing was not a picture of a hat. It was a picture of a boa constrictor digesting an elephant. But since the grown-ups were not able to understand it, I made another drawing: I drew the inside of the boa constrictor, so that the grown-ups could see it clearly. They always need to have things explained. My Drawing Number Two looked like this: The grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic and grammar. That is why, at the age of six, I gave up what might have been a magnificent career as a painter. I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to them. </p>
-    <p>So then I chose another profession, and learned to pilot airplanes. I have flown a little over all parts of the world; and it is true that geography has been very useful to me. At a glance I can distinguish China from Arizona. If one gets lost in the night, such knowledge is valuable. In the course of this life I have had a great many encounters with a great many people who have been concerned with matters of consequence. I have lived a great deal among grown-ups. I have seen them intimately, close at hand. And that hasn't much improved my opinion of them. Whenever I met one of them who seemed to me at all clear-sighted, I tried the experiment of showing him my Drawing Number One, which I have always kept. I would try to find out, so, if this was a person of true understanding. But, whoever it was, he, or she, would always say: &quot;That is a hat.&quot; </p>
-    <p>Then I would never talk to that person about boa constrictors, or primeval forests, or stars. I would bring myself down to his level. I would talk to him about bridge, and golf, and politics, and neckties. And the grown-up would be greatly pleased to have met such a sensible man.</p>
-   </div>
-   <script>
-    var address;
-    window.onload = function () {
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        trustnote.getAddress(function (resp) {
-            console.log(resp);
-            address = resp.message.address;
-            //$("#debug").text(address);
-            $("#pay_for_read").click(function(){
-              pay();
-            });
-        });
-    }
+    <title>TrustNote</title>
 
-
-
-    function pay() {
-
-        var _to_address = "OKLGMIWBCFITVWKZF3JASA23OMZLICSH";//支付地址，即提供阅读服务的服务商的钱包收款地址
-        var _amount = 10*1000000;   //  1 MN = 100000 ; 10 MN = 10* 100000
-        var _message = "reading 《little Prince》"
-
-        var data = {
-            payer: address,
-            outputs: [{
-                address: _to_address,
-                amount: _amount
-            }],
-            message: _message
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/trustnote.js"></script>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .more {
+            display: none;
+        }
+        .btnBox {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+        }
+        .btnC {
+            background: linear-gradient(-230deg, #73A1F5 0%, #4F7FF0 100%);
+            width: 320px;
+            height: 50px;
+            border-radius: 50px;
+            line-height: 50px;
+            color: #fff;
+            font-size: 18px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 26px;
+        }
+        p.auther {
+            color: #999;
+            font-size: 14px;
         }
 
-        $("#pay_for_read").text("paying ...");
-        $("#pay_for_read").attr("disabled","disabled");
+    </style>
+</head>
 
+<body>
+    <div class="btnBox">
+        <div id="pay_for_read" class="btnC">
+            pay 0.01 TTT to read more
+        </div>
+    </div>
 
-        trustnote.callPay(data, function (resp) {
+    <div class="container">
+        <p></p>
+        <h2>little prince</h2>
+        <p class="auther">[France] Exupéry</p>
+        <!-- <hr /> -->
+        <p>
+            Once when I was six years old I saw a magnificent picture in a book, called True Stories
+            from Nature, about the primeval forest. It was a picture of a boa constrictor in the act of
+            swallowing an animal. Here is a copy of the drawing...
+        </p>
+        <pre id="debug"></pre>
+        <div class="more">
+            <p>
+                In the book it said: &quot;Boa constrictors swallow their prey whole, without chewing it.
+                After that they are not able to move, and they sleep through the six months that they need
+                for digestion.&quot;
+            </p>
+            <p>
+                I pondered deeply, then, over the adventures of the jungle. And after some work with a
+                colored pencil I succeeded in making my first drawing. My Drawing Number One. It looked
+                like this:
+            </p>
+            <p>
+                I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened
+                them.
+            </p>
+            <p>But they answered: &quot;Frighten? Why should any one be frightened by a hat?&quot;</p>
+            <p>
+                My drawing was not a picture of a hat. It was a picture of a boa constrictor digesting an
+                elephant. But since the grown-ups were not able to understand it, I made another drawing:
+                I drew the inside of the boa constrictor, so that the grown-ups could see it clearly. They
+                always need to have things explained. My Drawing Number Two looked like this: The
+                grown-ups' response, this time, was to advise me to lay aside my drawings of boa
+                constrictors, whether from the inside or the outside, and devote myself instead to
+                geography, history, arithmetic and grammar. That is why, at the age of six, I gave up what
+                might have been a magnificent career as a painter. I had been disheartened by the failure
+                of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by
+                themselves, and it is tiresome for children to be always and forever explaining things to
+                them.
+            </p>
+            <p>
+                So then I chose another profession, and learned to pilot airplanes. I have flown a little
+                over all parts of the world; and it is true that geography has been very useful to me. At
+                a glance I can distinguish China from Arizona. If one gets lost in the night, such
+                knowledge is valuable. In the course of this life I have had a great many encounters with
+                a great many people who have been concerned with matters of consequence. I have lived a
+                great deal among grown-ups. I have seen them intimately, close at hand. And that hasn't
+                much improved my opinion of them. Whenever I met one of them who seemed to me at all
+                clear-sighted, I tried the experiment of showing him my Drawing Number One, which I have
+                always kept. I would try to find out, so, if this was a person of true understanding. But,
+                whoever it was, he, or she, would always say: &quot;That is a hat.&quot;
+            </p>
+            <p>
+                Then I would never talk to that person about boa constrictors, or primeval forests, or
+                stars. I would bring myself down to his level. I would talk to him about bridge, and golf,
+                and politics, and neckties. And the grown-up would be greatly pleased to have met such a
+                sensible man.
+            </p>
+        </div>
+        <script>
+            var address;
+            window.onload = function () {
+                trustnote.getAddress(function (resp) {
+                    console.log(resp);
+                    address = resp.message.address;
+                    //$("#debug").text(address);
+                    $('#pay_for_read').click(function () {
+                        pay();
+                    });
+                });
+            };
 
-            //$("#debug").text(JSON.stringify(resp));
-            if(resp.hasOwnProperty("error")){
-              if(resp.error==null){
-                $(".more").show();
-                $("#pay_for_read").hide();
-              }else{
-                $("#pay_for_read").text("paying failure ... pay again");
-                $("#pay_for_read").removeAttr("disabled");
-              }
-            }else{
-              $(".more").show();
-              $("#pay_for_read").hide();
+            function pay() {
+                var _to_address = 'OKLGMIWBCFITVWKZF3JASA23OMZLICSH'; //支付地址，即提供阅读服务的服务商的钱包收款地址
+                var _amount = 0.01 * 1000000; //  1 MN = 100000 ; 10 MN = 10* 100000
+                var _message = 'reading 《little Prince》';
+
+                var data = {
+                    payer: address,
+                    outputs: [{
+                        address: _to_address,
+                        amount: _amount
+                    }],
+                    message: _message
+                };
+
+                $('#pay_for_read').text('paying ...');
+                $('#pay_for_read').attr('disabled', 'disabled');
+
+                trustnote.callPay(data, function (resp) {
+                    //$("#debug").text(JSON.stringify(resp));
+                    if (resp.hasOwnProperty('error')) {
+                        if (resp.error == null) {
+                            $('.more').show();
+                            $('#pay_for_read').hide();
+                        } else {
+                            $('#pay_for_read').text('paying failure ... pay again');
+                            $('#pay_for_read').removeAttr('disabled');
+                        }
+                    } else {
+                        $('.more').show();
+                        $('#pay_for_read').hide();
+                    }
+                });
             }
-        })
-    }
 
-</script>
-  </div>
- </body>
+        </script>
+    </div>
+</body>
 </html>
