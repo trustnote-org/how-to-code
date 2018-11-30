@@ -198,7 +198,117 @@ http://150.109.57.242:6001/api/v1/asset/txinfo/F8ofJgi8wokp0uIetxK%2fxwg3aAJ5t7P
 返回：
 
 ```
-{"network":"devnet","errCode":0,"errMsg":"success","data":{"unit":{"unit":"F8ofJgi8wokp0uIetxK/xwg3aAJ5t7Pvln2MNLGyS8M=","version":"1.0","alt":"1","witness_list_unit":"MtzrZeOHHjqVZheuLylf0DX7zhp10nBsQX5e/+cA3PQ=","last_ball_unit":"FU7+kILFFfH4UK2pIctXWbO6kNliAVP3toei/HHxbiE=","last_ball":"HlVm3tqKy6hWYR3ia/Qat5oNeOxTbxW2siBwhGtdmrc=","headers_commission":714,"payload_commission":358,"main_chain_index":153960,"timestamp":1539789830,"parent_units":["91IvDcfFy37zKdJ30WXbyUl6/bD2ip1Y6tmBUnK4YW8="],"earned_headers_commission_recipients":[{"address":"OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ","earned_headers_commission_share":100}],"authors":[{"address":"5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH","authentifiers":{"r":"nC+l/MzXcqsYyHjurBqEUasUz3Eje8TF6XbIuKXZgWw0CsXBF8ORE+0EiHO4PdqGUijDtQ3XNCaa1OFT7I3NpA=="}},{"address":"OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ","authentifiers":{"r.0.0":"nC+l/MzXcqsYyHjurBqEUasUz3Eje8TF6XbIuKXZgWw0CsXBF8ORE+0EiHO4PdqGUijDtQ3XNCaa1OFT7I3NpA=="},"definition":["or",[["and",[["address","5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp",">",1531299600000]]]],["and",[["address","752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp","=",0]]]]]]}],"messages":[{"app":"payment","payload_hash":"FOfA6SWV/0UVgefXXHMsGk0U4u7lNqo5ewVwZLhNaMc=","payload_location":"inline","payload":{"inputs":[{"unit":"4Cq1KWx1vmXO1L35F6cUj6yXilweVgBn9lCG6d/MLa4=","message_index":0,"output_index":1}],"outputs":[{"address":"OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ","amount":88928}]}},{"app":"payment","payload_hash":"grQJshnOKYhYUQCuS1tXEJ7X3schjU5FyGdJ8uvUUy8=","payload_location":"inline","payload":{"inputs":[{"unit":"eap7glIf3PDZ95doA+ngk3vdhFDUhhoQmBn+Cj5SU/A=","message_index":1,"output_index":0}],"asset":"7acKn25O/OuxUHJFXFHOACvNWpSDejx/BzxcWsQ8qzY=","outputs":[{"address":"LVP5X4PB2T757EIWJPACVLACLOOEMAVV","amount":150}]}}]},"ball":"ZEHEija1zDNT2Bc52pmmrEZ+Az89lkLAnEpiClUxt94=","skiplist_units":["KkXI52tTaQSiOz6buEK7i/rJEYuz6rGW7tCGfeqms0M="],"arrShareDefinition":[{"arrDefinition":["or",[["and",[["address","5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp",">",1531299600000]]]],["and",[["address","752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM"],["in data feed",[["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"],"timestamp","=",0]]]]]],"assocSignersByPath":{"r.0.0":{"device_address":"0YJBUFXU6NX3YII2NZWXBE63CMCKH53BM","address":"5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH","member_signing_path":"r"},"r.1.0":{"device_address":"0IQQISCHCS7OHLNPSZKG2W4CLJCNV3QXW","address":"752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM","member_signing_path":"r"}}}]}}
+{
+	"network": "devnet",
+	"errCode": 0,
+	"errMsg": "success",
+	"data": {
+		"unit": {
+			"unit": "F8ofJgi8wokp0uIetxK/xwg3aAJ5t7Pvln2MNLGyS8M=",
+			"version": "1.0",
+			"alt": "1",
+			"witness_list_unit": "MtzrZeOHHjqVZheuLylf0DX7zhp10nBsQX5e/+cA3PQ=",
+			"last_ball_unit": "FU7+kILFFfH4UK2pIctXWbO6kNliAVP3toei/HHxbiE=",
+			"last_ball": "HlVm3tqKy6hWYR3ia/Qat5oNeOxTbxW2siBwhGtdmrc=",
+			"headers_commission": 714,
+			"payload_commission": 358,
+			"main_chain_index": 153960,
+			"timestamp": 1539789830,
+			"parent_units": ["91IvDcfFy37zKdJ30WXbyUl6/bD2ip1Y6tmBUnK4YW8="],
+			"earned_headers_commission_recipients": [{
+				"address": "OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ",
+				"earned_headers_commission_share": 100
+			}],
+			"authors": [{
+				"address": "5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH",
+				"authentifiers": {
+					"r": "nC+l/MzXcqsYyHjurBqEUasUz3Eje8TF6XbIuKXZgWw0CsXBF8ORE+0EiHO4PdqGUijDtQ3XNCaa1OFT7I3NpA=="
+				}
+			}, {
+				"address": "OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ",
+				"authentifiers": {
+					"r.0.0": "nC+l/MzXcqsYyHjurBqEUasUz3Eje8TF6XbIuKXZgWw0CsXBF8ORE+0EiHO4PdqGUijDtQ3XNCaa1OFT7I3NpA=="
+				},
+				"definition": ["or", [
+					["and", [
+						["address", "5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH"],
+						["in data feed", [
+							["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"], "timestamp", ">", 1531299600000
+						]]
+					]],
+					["and", [
+						["address", "752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM"],
+						["in data feed", [
+							["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"], "timestamp", "=", 0
+						]]
+					]]
+				]]
+			}],
+			"messages": [{
+				"app": "payment",
+				"payload_hash": "FOfA6SWV/0UVgefXXHMsGk0U4u7lNqo5ewVwZLhNaMc=",
+				"payload_location": "inline",
+				"payload": {
+					"inputs": [{
+						"unit": "4Cq1KWx1vmXO1L35F6cUj6yXilweVgBn9lCG6d/MLa4=",
+						"message_index": 0,
+						"output_index": 1
+					}],
+					"outputs": [{
+						"address": "OHLL5L5W57IROOH4A3GISUGSP6KMFBRQ",
+						"amount": 88928
+					}]
+				}
+			}, {
+				"app": "payment",
+				"payload_hash": "grQJshnOKYhYUQCuS1tXEJ7X3schjU5FyGdJ8uvUUy8=",
+				"payload_location": "inline",
+				"payload": {
+					"inputs": [{
+						"unit": "eap7glIf3PDZ95doA+ngk3vdhFDUhhoQmBn+Cj5SU/A=",
+						"message_index": 1,
+						"output_index": 0
+					}],
+					"asset": "7acKn25O/OuxUHJFXFHOACvNWpSDejx/BzxcWsQ8qzY=",
+					"outputs": [{
+						"address": "LVP5X4PB2T757EIWJPACVLACLOOEMAVV",
+						"amount": 150
+					}]
+				}
+			}]
+		},
+		"ball": "ZEHEija1zDNT2Bc52pmmrEZ+Az89lkLAnEpiClUxt94=",
+		"skiplist_units": ["KkXI52tTaQSiOz6buEK7i/rJEYuz6rGW7tCGfeqms0M="],
+		"arrShareDefinition": [{
+			"arrDefinition": ["or", [
+				["and", [
+					["address", "5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH"],
+					["in data feed", [
+						["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"], "timestamp", ">", 1531299600000
+					]]
+				]],
+				["and", [
+					["address", "752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM"],
+					["in data feed", [
+						["4VYYR2YO6NV4NTF572AUBEKJLSTM4J4E"], "timestamp", "=", 0
+					]]
+				]]
+			]],
+			"assocSignersByPath": {
+				"r.0.0": {
+					"device_address": "0YJBUFXU6NX3YII2NZWXBE63CMCKH53BM",
+					"address": "5AOABXFRL5AX3MWEPWKQ6QY3MY6A5TMH",
+					"member_signing_path": "r"
+				},
+				"r.1.0": {
+					"device_address": "0IQQISCHCS7OHLNPSZKG2W4CLJCNV3QXW",
+					"address": "752L4B7Y7WQF3BRFEI2IGIN5RDZE54DM",
+					"member_signing_path": "r"
+				}
+			}
+		}]
+	}
+}
 ```
 
 这个api可以做什么？
