@@ -177,7 +177,11 @@ http://150.109.57.242:6002/api/v1/asset/sign
 return
 
 ```
-
+{
+	"network": "devnet",
+	"errMsg": "not enough asset: TTT from address OQXCPQ6NQVKPI46U2YFBY55EBCPAV3GF",
+	"data": "null"
+}
 ```
 
 
