@@ -60,7 +60,7 @@ let address = Client.walletAddress(walletPubkey, 0, 0)
 
 post
 
-http://150.109.57.242:6002/api/v1/account/register
+http://cockatoo.trustnote.org:6002/api/v1/account/register
 
 提交格式
 ```
@@ -75,11 +75,11 @@ http://150.109.57.242:6002/api/v1/account/register
 
 GET方式提交
 
-http://150.109.57.242:6002/api/v1/asset/balance/:address/:asset
+http://cockatoo.trustnote.org:6002/api/v1/asset/balance/:address/:asset
 
 如：
 ```
-http://150.109.57.242:6002/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT
+http://cockatoo.trustnote.org:6002/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT
 ```
 
 返回如下信息：
@@ -117,7 +117,7 @@ http://150.109.57.242:6002/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T
 
 post
 
-http://150.109.57.242:6002/api/v1/asset/transfer
+http://cockatoo.trustnote.org:6002/api/v1/asset/transfer
 
 如：
 
@@ -163,7 +163,7 @@ let sig = Client.sign(b64_to_sign, privkey, "m/44'/0'/0'/0/0")
 
 post
 
-http://150.109.57.242:6002/api/v1/asset/sign
+http://cockatoo.trustnote.org:6002/api/v1/asset/sign
 
 参数如下：
 
@@ -191,12 +191,12 @@ return
 
 get
 
-http://150.109.57.242:6002/api/v1/asset/txhistory/:address/:asset/:page/:itemsPerPage
+http://cockatoo.trustnote.org:6002/api/v1/asset/txhistory/:address/:asset/:page/:itemsPerPage
 
 如：
 
 ```
-http://150.109.57.242:6001/api/v1/asset/txinfo/F8ofJgi8wokp0uIetxK%2fxwg3aAJ5t7Pvln2MNLGyS8M%3d
+http://cockatoo.trustnote.org:6001/api/v1/asset/txinfo/F8ofJgi8wokp0uIetxK%2fxwg3aAJ5t7Pvln2MNLGyS8M%3d
 ```
 
 返回：
