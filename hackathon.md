@@ -60,7 +60,7 @@ let address = Client.walletAddress(walletPubkey, 0, 0)
 
 post
 
-http://150.109.57.242:6001/api/v1/account/register
+http://150.109.57.242:6002/api/v1/account/register
 
 提交格式
 ```
@@ -75,13 +75,11 @@ http://150.109.57.242:6001/api/v1/account/register
 
 GET方式提交
 
-http://150.109.57.242:6001/api/v1/asset/balance/:address/:asset
+http://150.109.57.242:6002/api/v1/asset/balance/:address/:asset
 
 如：
 ```
-$.getJSON("http://150.109.57.242:6001/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT",function(josn){
- console.log(json.data.stable);
-})
+http://150.109.57.242:6002/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU7A5NULUUG5T/TTT
 ```
 
 返回如下信息：
@@ -119,7 +117,7 @@ $.getJSON("http://150.109.57.242:6001/api/v1/asset/balance/YAZTIHFC7JS43HOYKGNAU
 
 post
 
-http://150.109.57.242:6001/api/v1/asset/transfer
+http://150.109.57.242:6002/api/v1/asset/transfer
 
 如：
 
@@ -165,7 +163,7 @@ let sig = Client.sign(b64_to_sign, privkey, "m/44'/0'/0'/0/0")
 
 post
 
-http://150.109.57.242:6001/api/v1/asset/sign
+http://150.109.57.242:6002/api/v1/asset/sign
 
 参数如下：
 
@@ -176,13 +174,20 @@ http://150.109.57.242:6001/api/v1/asset/sign
 }
 ```
 
+return
+
+```
+
+```
+
+
 其中 sig 是第10步签名得出的结果。txid是第9步时返回的。
 
 12）获得交易历史
 
 get
 
-http://150.109.57.242:6001/api/v1/asset/txhistory/:address/:asset/:page/:itemsPerPage
+http://150.109.57.242:6002/api/v1/asset/txhistory/:address/:asset/:page/:itemsPerPage
 
 如：
 
@@ -200,81 +205,6 @@ http://150.109.57.242:6001/api/v1/asset/txinfo/F8ofJgi8wokp0uIetxK%2fxwg3aAJ5t7P
 
 我们可以制作一个抽奖程序。根据参与用户（历史支付记录）作为一个序列，产生一个随即数，从这个序列里产生一个中奖者。
 
-三、通用钱包小程序jssdk
-
-jssdk 是通用钱包内嵌的H5页面调用的简易sdk。可以方便让H5页面纯前端实现支付功能。
-
-下面是方法：
-
-https://github.com/trustnote/how-to-code/blob/master/devkit/payment/trustnote.js
-
-1. require TrustNote.js 引入jssdk
-
-```
-<script src="/static/js/TrustNote.js"></script>
-```
-
-2. retrieve the Wallet Address 获得当前的钱包地址
-
-```
-var address;
-window.onload = function () {
-    trustnote.getAddress(function (resp) {
-        address = resp.message.address;
-    });
-}
-
-```
-
-如果你的小程序有后台，你可以通过获得钱包地址的方式来判断该钱包是不是老用户。在去中心化的区块链中，钱包地址相当于传统app的用户名。
-
-3. transfer 转账
-
-```
-function pay() {
-        var _to_address = "OKLGMIWBCFITVWKZF3JASA23OMZLICSH";// Service Provider's wallet address.
-        var _amount = 10*1000000;   // 1 MN = 1,000,000 Notes; 10 MN = 10 * 1,000,000
-        var _message = "some text" // Texts defined here will be stored on TrustNote network along with the transaction.
-        var data = {
-            payer: address,// This is the wallet address obtained using the trustnote.getAddress function as above.
-            outputs: [{
-                address: _to_address,
-                amount: _amount
-            }],
-            message: _message
-        }
-        
-        trustnote.callPay(data, function (resp) {
-            if(resp.hasOwnProperty("error")){
-              if(resp.error){
-                //Callback function after payment failure
-              }else{
-                //Callback function after successful payment
-              }
-            }else{
-              //Callback function after successful payment
-            }
-        })
-    }
-
-```
-
-return jsno 转账后会返回如下信息：
-
-```
-{
-  eventName: "payment",
-  message: {
-    unit: "MulUMgOU4e2ApF0Egq8R4vPt0alrz98y2JCk+gSQYiM="
-  },
-  error: null
-}
-
-```
-这个转账，可以做哪些事情？
-
-比如付费阅读，比如赞赏，比如购买商品。
-
 三、Sample 例子
 
 1）web钱包示例 
@@ -288,10 +218,4 @@ https://github.com/fusionwallet/wallet
 使用chrome扩展对第一个示例web钱包进行了封装。
 
 https://github.com/fusionwallet/chrome_extensions
-
-3）通用钱包小程序示例
-
-使用 trustnote jssdk 在H5上面构建付费阅读的一个小示例。
-
-https://github.com/trustnote/how-to-code/tree/master/samples/paid_reading
 
