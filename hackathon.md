@@ -174,7 +174,7 @@ http://cockatoo.trustnote.org:6002/api/v1/asset/sign
 }
 ```
 
-return
+支付失败返回状态：
 
 ```
 {
@@ -184,6 +184,69 @@ return
 }
 ```
 
+支付成功返回状态：
+
+```
+{
+  "network": "devnet",
+  "errCode": 0,
+  "errMsg": "success",
+  "data": {
+    "version": "1.0",
+    "alt": "1",
+    "messages": [
+      {
+        "app": "text",
+        "payload_location": "inline",
+        "payload_hash": "gC2EKFPWD6yh7/5opSCOoBU7p0dVrfIawrvx7G+m6PA=",
+        "payload": "hello"
+      },
+      {
+        "app": "payment",
+        "payload_location": "inline",
+        "payload_hash": "PR1YY8CzI194rIacz5v7WXspoHeBApUNktm7fAb8KgI=",
+        "payload": {
+          "outputs": [
+            {
+              "address": "KPQ3CRPBG5FSKVEH6Y76ETGD5D2N7QZ7",
+              "amount": 123
+            },
+            {
+              "address": "ZR5Y4RNILLXNGTHIVPSSVMM32NYEFFCQ",
+              "amount": 9997108
+            }
+          ],
+          "inputs": [
+            {
+              "unit": "uujm67ROYdYE06+3Cwrsg/8je8YRrhLCJaBdDK0MFgU=",
+              "message_index": 1,
+              "output_index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "authors": [
+      {
+        "address": "ZR5Y4RNILLXNGTHIVPSSVMM32NYEFFCQ",
+        "authentifiers": {
+          "r": "li4xPfMMbiMyw7YWGuiHjklWu6IPxQOnlB9S0rjlUkAplCyP5OrlfcjOWOuRO4Ua99cgCTI23wI6rg0outpUwA=="
+        }
+      }
+    ],
+    "parent_units": [
+      "YKvqGN0BPSGU7V1OyZQ3CngT0F1h9625t1w5+PHaRZA="
+    ],
+    "last_ball": "42oBobq5QeGixWyPyzgGo20Yidz8rBbu3aP9PejN1OU=",
+    "last_ball_unit": "TVrwV2a2ikajPkg8e40QjIjViqIhqN2cL/PArZKtpRY=",
+    "witness_list_unit": "MtzrZeOHHjqVZheuLylf0DX7zhp10nBsQX5e/+cA3PQ=",
+    "headers_commission": 344,
+    "payload_commission": 256,
+    "unit": "7GC0ZBUf72SH07YXCLTrhpebdx9umNSFhYD3RXPMl0Y=",
+    "timestamp": 1541645181
+  }
+}
+```
 
 其中 sig 是第10步签名得出的结果。txid是第9步时返回的。
 
